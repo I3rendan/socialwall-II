@@ -1,0 +1,82 @@
+<div id="masonry-wrap"
+  ng-class="{ 'new-item': newVisible === true }"
+  ng-init="getPhotos(true)" 
+  masonry-grid>
+  <div id="brick{{ $index }}" 
+    class="brick"
+    ng-style="colStyle"
+    ng-repeat="brick in bricks[0] track by $index">
+    <img ng-src="{{ brick.jpg }}" alt="Brick">
+  </div>
+</div>
+<div id="new-brick"
+  ng-class="{'visible': newVisible}"
+  ng-style="newBrickStyle">
+  <img id="new-brick-img" ng-src="{{ newBrick.gif }}" alt="New Brick">
+</div>
+<div class="masonry-hidden">
+  <div class="brick"
+    ng-style="colStyle"
+    ng-repeat="brick in bricks[0] track by $index">
+    <img ng-src="{{ brick.gif }}" alt="Brick">
+  </div>
+</div>
+<div class="masonry-hidden">
+  <div class="brick"
+    ng-style="colStyle"
+    ng-repeat="brick in bricks[0] track by $index">
+    <img ng-src="{{ brick.jpg }}" alt="Brick">
+  </div>
+</div>
+<div class="masonry-hidden">
+  <div class="brick"
+    ng-style="colStyle"
+    ng-repeat="brick in bricksDupe[0] track by $index">
+    <img ng-src="{{ brick.jpg }}" alt="Brick">
+  </div>
+</div>
+
+<div id="social-wrap">
+
+  <div class="social-outer" ng-init="loadPosts()">
+
+    <div id="social{{$index}}" 
+      class="social-item"
+      ng-class="feedPost.type"  
+      ng-repeat="feedPost in feedPosts" social-item>
+
+
+      <div class="social-inner montage" ng-if="feedPost.type === 'montage'">
+        <img ng-src="{{feedPost.data.url}}">
+      </div>
+
+      <div class="social-inner video" ng-if="feedPost.type === 'video'">
+        <video width="100%" height="540px">
+          <source ng-src="{{feedPost.data.url}}">
+        </video>
+      </div>
+
+      <div class="social-inner socialpost social-{{feedPost.data.site}}"  ng-if="feedPost.type === 'socialpost'">
+        <div class="social-img">
+          <img ng-src="{{feedPost.data.avatar_url}}">
+        </div>
+        <div class="social-name">
+          <p>
+            {{feedPost.data.screen_name}}
+          </p>
+        </div>
+        <div class="social-post">
+          <p>{{feedPost.data.title}}</p>
+        </div>
+        <div class="social-icon">
+          <i class="icon icon-{{feedPost.data.site}}"></i>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>

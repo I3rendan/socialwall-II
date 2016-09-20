@@ -1,0 +1,133 @@
+#social-wrap
+  height: 45vh
+  width: 100%
+  position: absolute
+  right: 0
+  top: 55vh
+  z-index: 1
+  box-shadow: -2px 0 4px rgba(0,0,0,0.25)
+  background: url('../images/subtlenet.png') $color-white
+
+.social-outer
+  top: 0
+  height: 100%
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15)
+  overflow: hidden
+  position: relative
+
+  .social-item
+    width: 100%
+    color: $color-dark * 3
+    opacity: 1
+    position: relative
+    display: block
+    text-align: left
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.15)
+
+    &.socialpost:after
+      content: ""
+      position: absolute
+      left: 0
+      top: 0
+      height: 100%
+      width: 100%
+      background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 95%)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(80%,rgba(255,255,255,0)), color-stop(95%,rgba(255,255,255,1)))
+      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+      background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+      background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+      background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+      z-index: 2
+
+  .social-inner
+    display: inline-block
+    height: 100%
+    width: 100%
+
+    &.montage
+      overflow: hidden
+
+      > img
+        min-height: 100%
+        min-width: 100%
+        position: relative
+        top: 0
+        left: 0
+
+    &.socialpost
+      padding: 1.5em 3em
+      margin: 0.25em 0
+      font-size: 2em
+
+      &.social-twitter
+        .social-name > p
+          color: $color-twitter
+
+          &:before
+            content: "@"
+
+        .social-icon
+          color: $color-twitter
+
+      &.social-facebook
+        .social-name > p
+          color: $color-facebook
+
+        .social-icon
+          color: $color-facebook
+
+      &.social-instagram
+        .social-name > p
+          color: $color-instagram
+
+        .social-icon
+          color: $color-instagram
+
+      &.social-custom
+        .social-name > p
+          color: $color-primary
+
+        .social-icon
+          color: $color-primary
+
+  .social-img
+    width: 3em
+    float: left
+    vertical-align: top
+
+    img
+      width: 100%
+      border-radius: $border-radius
+      overflow: hidden
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15)
+
+  .social-name
+    float: left
+    width: calc(100% - 3em)
+    position: relative
+    z-index: 1
+
+    > p
+      display: inline-block
+      width: calc(100% - 1em)
+      font-size: 1.15em
+      margin: 0.33em 0 0.33em 1em
+      line-height: 1.33
+
+  .social-post
+    float: left
+    width: 100%
+
+    > p
+      font-size: 1em
+      line-height: 1.25
+
+  .social-icon
+    position: absolute
+    right: 0.33em
+    top: 0.33em
+    font-size: 1.75em
+    color: darken($color-primary-dark, 12.5%)
+    z-index: 0
+    text-shadow: 0 1px 0 fade-out($color-white, 0.925)

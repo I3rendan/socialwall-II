@@ -1,0 +1,9 @@
+{
+  "loopTime": 3,
+  "gifRunTime": 2,
+  "colNum": 5,
+  "result": "success",
+  "photos": [
+    {"gif":"http:\/\/sbviewer.com\/photos\/100312.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100312.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100149.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100149.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100256.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100256.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100312.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100312.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100077.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100077.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100141.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100141.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100320.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100320.gif&h=430q=80"},{"gif":"http:\/\/sbviewer.com\/photos\/100240.gif","jpg":"http:\/\/sbviewer.com\/timthumb.php?src=\/photos\/100240.gif&h=430q=80"}
+  ]
+}

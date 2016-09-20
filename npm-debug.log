@@ -1,0 +1,1345 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.6.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@3.10.7
+3 info using node@v6.6.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData grunt-contrib-imagemin
+20 silly mapToRegistry name grunt-contrib-imagemin
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'grunt-contrib-imagemin',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'grunt-contrib-imagemin',
+23 silly mapToRegistry   name: 'grunt-contrib-imagemin',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/grunt-contrib-imagemin
+25 verbose request uri https://registry.npmjs.org/grunt-contrib-imagemin
+26 verbose request no auth needed
+27 info attempt registry request try #1 at 10:56:55 PM
+28 verbose request id 1df504192c08f12d
+29 verbose etag "EPE8Y0T0CESAM1CBQYJQ5LZ0N"
+30 http request GET https://registry.npmjs.org/grunt-contrib-imagemin
+31 http 304 https://registry.npmjs.org/grunt-contrib-imagemin
+32 verbose headers { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   etag: '"EPE8Y0T0CESAM1CBQYJQ5LZ0N"',
+32 verbose headers   age: '141',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-iad2122-IAD',
+32 verbose headers   'x-cache': 'HIT',
+32 verbose headers   'x-cache-hits': '1',
+32 verbose headers   'x-timer': 'S1474340215.624842,VS0,VE0',
+32 verbose headers   vary: 'Accept-Encoding' }
+33 silly get cb [ 304,
+33 silly get   { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     'cache-control': 'max-age=300',
+33 silly get     etag: '"EPE8Y0T0CESAM1CBQYJQ5LZ0N"',
+33 silly get     age: '141',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-iad2122-IAD',
+33 silly get     'x-cache': 'HIT',
+33 silly get     'x-cache-hits': '1',
+33 silly get     'x-timer': 'S1474340215.624842,VS0,VE0',
+33 silly get     vary: 'Accept-Encoding' } ]
+34 verbose etag https://registry.npmjs.org/grunt-contrib-imagemin from cache
+35 verbose get saving grunt-contrib-imagemin to /Users/Brendan/.npm/registry.npmjs.org/grunt-contrib-imagemin/.cache.json
+36 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+37 silly resolveWithNewModule grunt-contrib-imagemin@0.3.0 checking installable status
+38 silly cache add args [ 'grunt-contrib-imagemin@~0.3.0', null ]
+39 verbose cache add spec grunt-contrib-imagemin@~0.3.0
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'grunt-contrib-imagemin@~0.3.0',
+40 silly cache add   scope: null,
+40 silly cache add   escapedName: 'grunt-contrib-imagemin',
+40 silly cache add   name: 'grunt-contrib-imagemin',
+40 silly cache add   rawSpec: '~0.3.0',
+40 silly cache add   spec: '>=0.3.0 <0.4.0',
+40 silly cache add   type: 'range' }
+41 silly addNamed grunt-contrib-imagemin@>=0.3.0 <0.4.0
+42 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for grunt-contrib-imagemin
+43 silly addNameRange { name: 'grunt-contrib-imagemin',
+43 silly addNameRange   range: '>=0.3.0 <0.4.0',
+43 silly addNameRange   hasData: false }
+44 silly mapToRegistry name grunt-contrib-imagemin
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'grunt-contrib-imagemin',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'grunt-contrib-imagemin',
+47 silly mapToRegistry   name: 'grunt-contrib-imagemin',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/grunt-contrib-imagemin
+49 verbose addNameRange registry:https://registry.npmjs.org/grunt-contrib-imagemin not in flight; fetching
+50 verbose get https://registry.npmjs.org/grunt-contrib-imagemin not expired, no request
+51 silly addNameRange number 2 { name: 'grunt-contrib-imagemin',
+51 silly addNameRange   range: '>=0.3.0 <0.4.0',
+51 silly addNameRange   hasData: true }
+52 silly addNameRange versions [ 'grunt-contrib-imagemin',
+52 silly addNameRange   [ '0.1.0',
+52 silly addNameRange     '0.1.1',
+52 silly addNameRange     '0.1.2',
+52 silly addNameRange     '0.1.3',
+52 silly addNameRange     '0.1.4',
+52 silly addNameRange     '0.1.1-rc7',
+52 silly addNameRange     '0.1.1-rc8',
+52 silly addNameRange     '0.2.0',
+52 silly addNameRange     '0.2.1',
+52 silly addNameRange     '0.3.0',
+52 silly addNameRange     '0.4.0',
+52 silly addNameRange     '0.4.1',
+52 silly addNameRange     '0.5.0',
+52 silly addNameRange     '0.6.0',
+52 silly addNameRange     '0.6.1',
+52 silly addNameRange     '0.7.0',
+52 silly addNameRange     '0.7.1',
+52 silly addNameRange     '0.7.2',
+52 silly addNameRange     '0.8.0',
+52 silly addNameRange     '0.8.1',
+52 silly addNameRange     '0.9.0',
+52 silly addNameRange     '0.9.1',
+52 silly addNameRange     '0.9.2',
+52 silly addNameRange     '0.9.3',
+52 silly addNameRange     '0.9.4',
+52 silly addNameRange     '1.0.0',
+52 silly addNameRange     '1.0.1' ] ]
+53 silly addNamed grunt-contrib-imagemin@0.3.0
+54 verbose addNamed "0.3.0" is a plain semver version for grunt-contrib-imagemin
+55 silly cache afterAdd grunt-contrib-imagemin@0.3.0
+56 verbose afterAdd /Users/Brendan/.npm/grunt-contrib-imagemin/0.3.0/package/package.json not in flight; writing
+57 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+58 verbose afterAdd /Users/Brendan/.npm/grunt-contrib-imagemin/0.3.0/package/package.json written
+59 silly fetchNamedPackageData gifsicle
+60 silly mapToRegistry name gifsicle
+61 silly mapToRegistry using default registry
+62 silly mapToRegistry registry https://registry.npmjs.org/
+63 silly mapToRegistry data Result {
+63 silly mapToRegistry   raw: 'gifsicle',
+63 silly mapToRegistry   scope: null,
+63 silly mapToRegistry   escapedName: 'gifsicle',
+63 silly mapToRegistry   name: 'gifsicle',
+63 silly mapToRegistry   rawSpec: '',
+63 silly mapToRegistry   spec: 'latest',
+63 silly mapToRegistry   type: 'tag' }
+64 silly mapToRegistry uri https://registry.npmjs.org/gifsicle
+65 silly fetchNamedPackageData chalk
+66 silly mapToRegistry name chalk
+67 silly mapToRegistry using default registry
+68 silly mapToRegistry registry https://registry.npmjs.org/
+69 silly mapToRegistry data Result {
+69 silly mapToRegistry   raw: 'chalk',
+69 silly mapToRegistry   scope: null,
+69 silly mapToRegistry   escapedName: 'chalk',
+69 silly mapToRegistry   name: 'chalk',
+69 silly mapToRegistry   rawSpec: '',
+69 silly mapToRegistry   spec: 'latest',
+69 silly mapToRegistry   type: 'tag' }
+70 silly mapToRegistry uri https://registry.npmjs.org/chalk
+71 verbose request uri https://registry.npmjs.org/gifsicle
+72 verbose request no auth needed
+73 info attempt registry request try #1 at 10:56:55 PM
+74 verbose etag "F4UDSU5JQUXSRDAUO362XPYCJ"
+75 http request GET https://registry.npmjs.org/gifsicle
+76 verbose request uri https://registry.npmjs.org/chalk
+77 verbose request no auth needed
+78 info attempt registry request try #1 at 10:56:55 PM
+79 verbose etag "TBNBLT62T7I73PUOEOF9CLOW"
+80 http request GET https://registry.npmjs.org/chalk
+81 http 304 https://registry.npmjs.org/gifsicle
+82 verbose headers { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+82 verbose headers   via: '1.1 varnish',
+82 verbose headers   'cache-control': 'max-age=300',
+82 verbose headers   etag: '"F4UDSU5JQUXSRDAUO362XPYCJ"',
+82 verbose headers   age: '26',
+82 verbose headers   connection: 'keep-alive',
+82 verbose headers   'x-served-by': 'cache-iad2122-IAD',
+82 verbose headers   'x-cache': 'HIT',
+82 verbose headers   'x-cache-hits': '1',
+82 verbose headers   'x-timer': 'S1474340215.724113,VS0,VE0',
+82 verbose headers   vary: 'Accept-Encoding' }
+83 silly get cb [ 304,
+83 silly get   { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+83 silly get     via: '1.1 varnish',
+83 silly get     'cache-control': 'max-age=300',
+83 silly get     etag: '"F4UDSU5JQUXSRDAUO362XPYCJ"',
+83 silly get     age: '26',
+83 silly get     connection: 'keep-alive',
+83 silly get     'x-served-by': 'cache-iad2122-IAD',
+83 silly get     'x-cache': 'HIT',
+83 silly get     'x-cache-hits': '1',
+83 silly get     'x-timer': 'S1474340215.724113,VS0,VE0',
+83 silly get     vary: 'Accept-Encoding' } ]
+84 verbose etag https://registry.npmjs.org/gifsicle from cache
+85 verbose get saving gifsicle to /Users/Brendan/.npm/registry.npmjs.org/gifsicle/.cache.json
+86 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+87 silly resolveWithNewModule gifsicle@0.1.7 checking installable status
+88 silly cache add args [ 'gifsicle@~0.1.0', null ]
+89 verbose cache add spec gifsicle@~0.1.0
+90 silly cache add parsed spec Result {
+90 silly cache add   raw: 'gifsicle@~0.1.0',
+90 silly cache add   scope: null,
+90 silly cache add   escapedName: 'gifsicle',
+90 silly cache add   name: 'gifsicle',
+90 silly cache add   rawSpec: '~0.1.0',
+90 silly cache add   spec: '>=0.1.0 <0.2.0',
+90 silly cache add   type: 'range' }
+91 silly addNamed gifsicle@>=0.1.0 <0.2.0
+92 verbose addNamed ">=0.1.0 <0.2.0" is a valid semver range for gifsicle
+93 silly addNameRange { name: 'gifsicle', range: '>=0.1.0 <0.2.0', hasData: false }
+94 silly mapToRegistry name gifsicle
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry https://registry.npmjs.org/
+97 silly mapToRegistry data Result {
+97 silly mapToRegistry   raw: 'gifsicle',
+97 silly mapToRegistry   scope: null,
+97 silly mapToRegistry   escapedName: 'gifsicle',
+97 silly mapToRegistry   name: 'gifsicle',
+97 silly mapToRegistry   rawSpec: '',
+97 silly mapToRegistry   spec: 'latest',
+97 silly mapToRegistry   type: 'tag' }
+98 silly mapToRegistry uri https://registry.npmjs.org/gifsicle
+99 verbose addNameRange registry:https://registry.npmjs.org/gifsicle not in flight; fetching
+100 verbose get https://registry.npmjs.org/gifsicle not expired, no request
+101 silly addNameRange number 2 { name: 'gifsicle', range: '>=0.1.0 <0.2.0', hasData: true }
+102 silly addNameRange versions [ 'gifsicle',
+102 silly addNameRange   [ '0.1.0',
+102 silly addNameRange     '0.1.1',
+102 silly addNameRange     '0.1.2',
+102 silly addNameRange     '0.1.3',
+102 silly addNameRange     '0.1.4',
+102 silly addNameRange     '0.1.5',
+102 silly addNameRange     '0.1.6',
+102 silly addNameRange     '0.1.7',
+102 silly addNameRange     '1.0.0',
+102 silly addNameRange     '1.0.1',
+102 silly addNameRange     '1.0.2',
+102 silly addNameRange     '1.0.3',
+102 silly addNameRange     '2.0.0',
+102 silly addNameRange     '2.0.1',
+102 silly addNameRange     '3.0.0',
+102 silly addNameRange     '3.0.1',
+102 silly addNameRange     '3.0.2',
+102 silly addNameRange     '3.0.3',
+102 silly addNameRange     '3.0.4' ] ]
+103 silly addNamed gifsicle@0.1.7
+104 verbose addNamed "0.1.7" is a plain semver version for gifsicle
+105 silly cache afterAdd gifsicle@0.1.7
+106 verbose afterAdd /Users/Brendan/.npm/gifsicle/0.1.7/package/package.json not in flight; writing
+107 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+108 verbose afterAdd /Users/Brendan/.npm/gifsicle/0.1.7/package/package.json written
+109 http 304 https://registry.npmjs.org/chalk
+110 verbose headers { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+110 verbose headers   via: '1.1 varnish',
+110 verbose headers   'cache-control': 'max-age=300',
+110 verbose headers   etag: '"TBNBLT62T7I73PUOEOF9CLOW"',
+110 verbose headers   age: '158',
+110 verbose headers   connection: 'keep-alive',
+110 verbose headers   'x-served-by': 'cache-iad2131-IAD',
+110 verbose headers   'x-cache': 'HIT',
+110 verbose headers   'x-cache-hits': '6',
+110 verbose headers   'x-timer': 'S1474340215.765469,VS0,VE0',
+110 verbose headers   vary: 'Accept-Encoding' }
+111 silly get cb [ 304,
+111 silly get   { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+111 silly get     via: '1.1 varnish',
+111 silly get     'cache-control': 'max-age=300',
+111 silly get     etag: '"TBNBLT62T7I73PUOEOF9CLOW"',
+111 silly get     age: '158',
+111 silly get     connection: 'keep-alive',
+111 silly get     'x-served-by': 'cache-iad2131-IAD',
+111 silly get     'x-cache': 'HIT',
+111 silly get     'x-cache-hits': '6',
+111 silly get     'x-timer': 'S1474340215.765469,VS0,VE0',
+111 silly get     vary: 'Accept-Encoding' } ]
+112 verbose etag https://registry.npmjs.org/chalk from cache
+113 verbose get saving chalk to /Users/Brendan/.npm/registry.npmjs.org/chalk/.cache.json
+114 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+115 silly resolveWithNewModule chalk@0.2.1 checking installable status
+116 silly cache add args [ 'chalk@~0.2.0', null ]
+117 verbose cache add spec chalk@~0.2.0
+118 silly cache add parsed spec Result {
+118 silly cache add   raw: 'chalk@~0.2.0',
+118 silly cache add   scope: null,
+118 silly cache add   escapedName: 'chalk',
+118 silly cache add   name: 'chalk',
+118 silly cache add   rawSpec: '~0.2.0',
+118 silly cache add   spec: '>=0.2.0 <0.3.0',
+118 silly cache add   type: 'range' }
+119 silly addNamed chalk@>=0.2.0 <0.3.0
+120 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for chalk
+121 silly addNameRange { name: 'chalk', range: '>=0.2.0 <0.3.0', hasData: false }
+122 silly mapToRegistry name chalk
+123 silly mapToRegistry using default registry
+124 silly mapToRegistry registry https://registry.npmjs.org/
+125 silly mapToRegistry data Result {
+125 silly mapToRegistry   raw: 'chalk',
+125 silly mapToRegistry   scope: null,
+125 silly mapToRegistry   escapedName: 'chalk',
+125 silly mapToRegistry   name: 'chalk',
+125 silly mapToRegistry   rawSpec: '',
+125 silly mapToRegistry   spec: 'latest',
+125 silly mapToRegistry   type: 'tag' }
+126 silly mapToRegistry uri https://registry.npmjs.org/chalk
+127 verbose addNameRange registry:https://registry.npmjs.org/chalk not in flight; fetching
+128 verbose get https://registry.npmjs.org/chalk not expired, no request
+129 silly addNameRange number 2 { name: 'chalk', range: '>=0.2.0 <0.3.0', hasData: true }
+130 silly addNameRange versions [ 'chalk',
+130 silly addNameRange   [ '0.1.0',
+130 silly addNameRange     '0.1.1',
+130 silly addNameRange     '0.2.0',
+130 silly addNameRange     '0.2.1',
+130 silly addNameRange     '0.3.0',
+130 silly addNameRange     '0.4.0',
+130 silly addNameRange     '0.5.0',
+130 silly addNameRange     '0.5.1',
+130 silly addNameRange     '1.0.0',
+130 silly addNameRange     '1.1.0',
+130 silly addNameRange     '1.1.1',
+130 silly addNameRange     '1.1.2',
+130 silly addNameRange     '1.1.3' ] ]
+131 silly addNamed chalk@0.2.1
+132 verbose addNamed "0.2.1" is a plain semver version for chalk
+133 silly cache afterAdd chalk@0.2.1
+134 verbose afterAdd /Users/Brendan/.npm/chalk/0.2.1/package/package.json not in flight; writing
+135 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+136 verbose afterAdd /Users/Brendan/.npm/chalk/0.2.1/package/package.json written
+137 silly fetchNamedPackageData ansi-styles
+138 silly mapToRegistry name ansi-styles
+139 silly mapToRegistry using default registry
+140 silly mapToRegistry registry https://registry.npmjs.org/
+141 silly mapToRegistry data Result {
+141 silly mapToRegistry   raw: 'ansi-styles',
+141 silly mapToRegistry   scope: null,
+141 silly mapToRegistry   escapedName: 'ansi-styles',
+141 silly mapToRegistry   name: 'ansi-styles',
+141 silly mapToRegistry   rawSpec: '',
+141 silly mapToRegistry   spec: 'latest',
+141 silly mapToRegistry   type: 'tag' }
+142 silly mapToRegistry uri https://registry.npmjs.org/ansi-styles
+143 verbose request uri https://registry.npmjs.org/ansi-styles
+144 verbose request no auth needed
+145 info attempt registry request try #1 at 10:56:55 PM
+146 verbose etag "2S43S9IH54YQSFIO0BL7CTRUF"
+147 http request GET https://registry.npmjs.org/ansi-styles
+148 http 304 https://registry.npmjs.org/ansi-styles
+149 verbose headers { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+149 verbose headers   via: '1.1 varnish',
+149 verbose headers   'cache-control': 'max-age=300',
+149 verbose headers   etag: '"2S43S9IH54YQSFIO0BL7CTRUF"',
+149 verbose headers   age: '272',
+149 verbose headers   connection: 'keep-alive',
+149 verbose headers   'x-served-by': 'cache-iad2122-IAD',
+149 verbose headers   'x-cache': 'HIT',
+149 verbose headers   'x-cache-hits': '5',
+149 verbose headers   'x-timer': 'S1474340215.792909,VS0,VE0',
+149 verbose headers   vary: 'Accept-Encoding' }
+150 silly get cb [ 304,
+150 silly get   { date: 'Tue, 20 Sep 2016 02:56:55 GMT',
+150 silly get     via: '1.1 varnish',
+150 silly get     'cache-control': 'max-age=300',
+150 silly get     etag: '"2S43S9IH54YQSFIO0BL7CTRUF"',
+150 silly get     age: '272',
+150 silly get     connection: 'keep-alive',
+150 silly get     'x-served-by': 'cache-iad2122-IAD',
+150 silly get     'x-cache': 'HIT',
+150 silly get     'x-cache-hits': '5',
+150 silly get     'x-timer': 'S1474340215.792909,VS0,VE0',
+150 silly get     vary: 'Accept-Encoding' } ]
+151 verbose etag https://registry.npmjs.org/ansi-styles from cache
+152 verbose get saving ansi-styles to /Users/Brendan/.npm/registry.npmjs.org/ansi-styles/.cache.json
+153 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+154 silly resolveWithNewModule ansi-styles@0.2.0 checking installable status
+155 silly cache add args [ 'ansi-styles@~0.2.0', null ]
+156 verbose cache add spec ansi-styles@~0.2.0
+157 silly cache add parsed spec Result {
+157 silly cache add   raw: 'ansi-styles@~0.2.0',
+157 silly cache add   scope: null,
+157 silly cache add   escapedName: 'ansi-styles',
+157 silly cache add   name: 'ansi-styles',
+157 silly cache add   rawSpec: '~0.2.0',
+157 silly cache add   spec: '>=0.2.0 <0.3.0',
+157 silly cache add   type: 'range' }
+158 silly addNamed ansi-styles@>=0.2.0 <0.3.0
+159 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for ansi-styles
+160 silly addNameRange { name: 'ansi-styles', range: '>=0.2.0 <0.3.0', hasData: false }
+161 silly mapToRegistry name ansi-styles
+162 silly mapToRegistry using default registry
+163 silly mapToRegistry registry https://registry.npmjs.org/
+164 silly mapToRegistry data Result {
+164 silly mapToRegistry   raw: 'ansi-styles',
+164 silly mapToRegistry   scope: null,
+164 silly mapToRegistry   escapedName: 'ansi-styles',
+164 silly mapToRegistry   name: 'ansi-styles',
+164 silly mapToRegistry   rawSpec: '',
+164 silly mapToRegistry   spec: 'latest',
+164 silly mapToRegistry   type: 'tag' }
+165 silly mapToRegistry uri https://registry.npmjs.org/ansi-styles
+166 verbose addNameRange registry:https://registry.npmjs.org/ansi-styles not in flight; fetching
+167 verbose get https://registry.npmjs.org/ansi-styles not expired, no request
+168 silly addNameRange number 2 { name: 'ansi-styles', range: '>=0.2.0 <0.3.0', hasData: true }
+169 silly addNameRange versions [ 'ansi-styles',
+169 silly addNameRange   [ '0.1.0',
+169 silly addNameRange     '0.1.1',
+169 silly addNameRange     '0.1.2',
+169 silly addNameRange     '0.2.0',
+169 silly addNameRange     '1.0.0',
+169 silly addNameRange     '1.1.0',
+169 silly addNameRange     '2.0.0',
+169 silly addNameRange     '2.0.1',
+169 silly addNameRange     '2.1.0',
+169 silly addNameRange     '2.2.1' ] ]
+170 silly addNamed ansi-styles@0.2.0
+171 verbose addNamed "0.2.0" is a plain semver version for ansi-styles
+172 silly cache afterAdd ansi-styles@0.2.0
+173 verbose afterAdd /Users/Brendan/.npm/ansi-styles/0.2.0/package/package.json not in flight; writing
+174 verbose correctMkdir /Users/Brendan/.npm correctMkdir not in flight; initializing
+175 verbose afterAdd /Users/Brendan/.npm/ansi-styles/0.2.0/package/package.json written
+176 silly loadAllDepsIntoIdealTree Finishing
+177 silly loadIdealTree Finishing
+178 silly currentTree socialwallii@0.0.0
+178 silly currentTree ├── abbrev@1.0.9
+178 silly currentTree ├── adm-zip@0.4.7
+178 silly currentTree ├── amdefine@1.0.0
+178 silly currentTree ├── ansi-regex@2.0.0
+178 silly currentTree ├── ansi-styles@0.1.2
+178 silly currentTree ├── ansi@0.3.1
+178 silly currentTree ├── archy@0.0.2
+178 silly currentTree ├─┬ argparse@0.1.16
+178 silly currentTree │ └── underscore.string@2.4.0
+178 silly currentTree ├── asn1@0.2.3
+178 silly currentTree ├── assert-plus@0.2.0
+178 silly currentTree ├── astral-angular-annotate@0.0.2
+178 silly currentTree ├── astral-pass@0.1.0
+178 silly currentTree ├── astral@0.1.0
+178 silly currentTree ├── async@0.1.22
+178 silly currentTree ├── asynckit@0.4.0
+178 silly currentTree ├── aws-sign2@0.6.0
+178 silly currentTree ├── aws4@1.4.1
+178 silly currentTree ├─┬ bcrypt-pbkdf@1.0.0
+178 silly currentTree │ └── tweetnacl@0.14.3
+178 silly currentTree ├── bin-build@0.1.1
+178 silly currentTree ├── bin-check@0.1.5
+178 silly currentTree ├── bin-wrapper@0.3.4
+178 silly currentTree ├── binary@0.3.0
+178 silly currentTree ├─┬ bl@1.1.2
+178 silly currentTree │ ├── isarray@1.0.0
+178 silly currentTree │ └── readable-stream@2.0.6
+178 silly currentTree ├── block-stream@0.0.9
+178 silly currentTree ├── boom@2.10.1
+178 silly currentTree ├─┬ bower-config@0.5.2
+178 silly currentTree │ └── graceful-fs@2.0.3
+178 silly currentTree ├─┬ bower@0.9.2
+178 silly currentTree │ ├── async@0.2.10
+178 silly currentTree │ ├── graceful-fs@1.1.14
+178 silly currentTree │ ├── lodash@1.0.2
+178 silly currentTree │ ├── nopt@2.0.0
+178 silly currentTree │ ├─┬ request@2.11.4
+178 silly currentTree │ │ ├─┬ form-data@0.0.3
+178 silly currentTree │ │ │ ├── async@0.1.9
+178 silly currentTree │ │ │ └─┬ combined-stream@0.0.3
+178 silly currentTree │ │ │   └── delayed-stream@0.0.5
+178 silly currentTree │ │ └── mime@1.2.7
+178 silly currentTree │ └── rimraf@2.0.3
+178 silly currentTree ├── buffer-crc32@0.2.1
+178 silly currentTree ├── buffers@0.1.1
+178 silly currentTree ├── bytes@0.2.0
+178 silly currentTree ├── camelcase@1.2.1
+178 silly currentTree ├── caseless@0.11.0
+178 silly currentTree ├── chainsaw@0.1.0
+178 silly currentTree ├── chalk@0.1.1
+178 silly currentTree ├── clean-css@2.0.8
+178 silly currentTree ├── cli@0.4.5
+178 silly currentTree ├── clone@0.1.19
+178 silly currentTree ├── coa@0.3.9
+178 silly currentTree ├── coffee-script@1.3.3
+178 silly currentTree ├── colors@0.6.2
+178 silly currentTree ├── combined-stream@1.0.5
+178 silly currentTree ├── commander@2.0.0
+178 silly currentTree ├── config-chain@0.3.4
+178 silly currentTree ├─┬ configstore@0.3.2
+178 silly currentTree │ ├── argparse@1.0.7
+178 silly currentTree │ ├── esprima@2.7.3
+178 silly currentTree │ ├── graceful-fs@3.0.11
+178 silly currentTree │ ├── js-yaml@3.6.1
+178 silly currentTree │ ├── minimist@0.0.8
+178 silly currentTree │ ├── mkdirp@0.5.1
+178 silly currentTree │ ├── object-assign@2.1.1
+178 silly currentTree │ ├── osenv@0.1.3
+178 silly currentTree │ └── uuid@2.0.3
+178 silly currentTree ├── connect-livereload@0.2.0
+178 silly currentTree ├── connect@2.7.11
+178 silly currentTree ├── console-browserify@0.1.6
+178 silly currentTree ├── cookie-signature@1.0.1
+178 silly currentTree ├── cookie@0.0.5
+178 silly currentTree ├── core-util-is@1.0.2
+178 silly currentTree ├── cryptiles@2.0.5
+178 silly currentTree ├── css-parse@1.6.0
+178 silly currentTree ├── css-stringify@1.4.1
+178 silly currentTree ├── dargs@0.1.0
+178 silly currentTree ├─┬ dashdash@1.14.0
+178 silly currentTree │ └── assert-plus@1.0.0
+178 silly currentTree ├── date-time@0.1.1
+178 silly currentTree ├── dateformat@1.0.2-1.2.3
+178 silly currentTree ├── debug@2.2.0
+178 silly currentTree ├── decamelize@1.2.0
+178 silly currentTree ├─┬ decompress@0.2.5
+178 silly currentTree │ └── nopt@2.2.1
+178 silly currentTree ├── delayed-stream@1.0.0
+178 silly currentTree ├─┬ download@0.1.19
+178 silly currentTree │ └── nopt@2.2.1
+178 silly currentTree ├── duplexer@0.1.1
+178 silly currentTree ├── each-async@0.1.3
+178 silly currentTree ├── ecc-jsbn@0.1.1
+178 silly currentTree ├── escape-string-regexp@1.0.5
+178 silly currentTree ├── escodegen@0.0.28
+178 silly currentTree ├── esprima@1.0.4
+178 silly currentTree ├── estraverse@1.3.2
+178 silly currentTree ├── eventemitter2@0.4.14
+178 silly currentTree ├── executable@0.1.3
+178 silly currentTree ├── exit@0.1.2
+178 silly currentTree ├── ext-list@0.2.0
+178 silly currentTree ├─┬ ext-name@1.0.1
+178 silly currentTree │ └── underscore.string@2.3.3
+178 silly currentTree ├── extend@3.0.0
+178 silly currentTree ├── extsprintf@1.0.2
+178 silly currentTree ├── faye-websocket@0.4.4
+178 silly currentTree ├── filesize@1.10.0
+178 silly currentTree ├── find-file@0.1.4
+178 silly currentTree ├─┬ findup-sync@0.1.3
+178 silly currentTree │ ├── glob@3.2.11
+178 silly currentTree │ ├── lodash@2.4.2
+178 silly currentTree │ └── minimatch@0.3.0
+178 silly currentTree ├── forever-agent@0.6.1
+178 silly currentTree ├── form-data@2.0.0
+178 silly currentTree ├── formidable@1.0.14
+178 silly currentTree ├── fresh@0.1.0
+178 silly currentTree ├─┬ fstream@0.1.31
+178 silly currentTree │ ├── graceful-fs@3.0.11
+178 silly currentTree │ ├── minimist@0.0.8
+178 silly currentTree │ └── mkdirp@0.5.1
+178 silly currentTree ├── gaze@0.4.3
+178 silly currentTree ├── generate-function@2.0.0
+178 silly currentTree ├── generate-object-property@1.2.0
+178 silly currentTree ├── get-stdin@0.1.0
+178 silly currentTree ├── get-urls@0.1.2
+178 silly currentTree ├── getobject@0.1.0
+178 silly currentTree ├─┬ getpass@0.1.6
+178 silly currentTree │ └── assert-plus@1.0.0
+178 silly currentTree ├─┬ glob@3.1.21
+178 silly currentTree │ └── inherits@1.0.2
+178 silly currentTree ├─┬ globule@0.1.0
+178 silly currentTree │ └── lodash@1.0.2
+178 silly currentTree ├─┬ google-cdn@0.1.4
+178 silly currentTree │ ├── debug@0.7.4
+178 silly currentTree │ └── semver@2.0.11
+178 silly currentTree ├── got@0.2.0
+178 silly currentTree ├── graceful-fs@1.2.3
+178 silly currentTree ├── graceful-readlink@1.0.1
+178 silly currentTree ├─┬ grunt-autoprefixer@0.4.2
+178 silly currentTree │ └── autoprefixer@0.8.20131213
+178 silly currentTree ├── grunt-bower-install@1.0.2
+178 silly currentTree ├─┬ grunt-concurrent@0.5.0
+178 silly currentTree │ └── async@0.2.10
+178 silly currentTree ├── grunt-contrib-clean@0.5.0
+178 silly currentTree ├─┬ grunt-contrib-compass@0.7.2
+178 silly currentTree │ └── async@0.2.10
+178 silly currentTree ├── grunt-contrib-concat@0.3.0
+178 silly currentTree ├── grunt-contrib-connect@0.5.0
+178 silly currentTree ├── grunt-contrib-copy@0.4.1
+178 silly currentTree ├── grunt-contrib-cssmin@0.7.0
+178 silly currentTree ├── grunt-contrib-htmlmin@0.1.3
+178 silly currentTree ├── grunt-contrib-jshint@0.7.2
+178 silly currentTree ├── grunt-contrib-uglify@0.2.7
+178 silly currentTree ├── grunt-contrib-watch@0.5.3
+178 silly currentTree ├── grunt-google-cdn@0.2.2
+178 silly currentTree ├─┬ grunt-karma@2.0.0
+178 silly currentTree │ └── lodash@3.10.1
+178 silly currentTree ├─┬ grunt-legacy-log-utils@0.1.1
+178 silly currentTree │ ├── lodash@2.4.2
+178 silly currentTree │ └── underscore.string@2.3.3
+178 silly currentTree ├─┬ grunt-legacy-log@0.1.3
+178 silly currentTree │ ├── lodash@2.4.2
+178 silly currentTree │ └── underscore.string@2.3.3
+178 silly currentTree ├── grunt-legacy-util@0.2.0
+178 silly currentTree ├── grunt-lib-contrib@0.6.1
+178 silly currentTree ├─┬ grunt-newer@0.6.1
+178 silly currentTree │ ├── async@0.2.9
+178 silly currentTree │ ├── graceful-fs@2.0.3
+178 silly currentTree │ └── rimraf@2.2.4
+178 silly currentTree ├── grunt-ngmin@0.0.3
+178 silly currentTree ├── grunt-rev@0.1.0
+178 silly currentTree ├─┬ grunt-svgmin@0.2.1
+178 silly currentTree │ ├── ansi-styles@0.2.0
+178 silly currentTree │ ├── chalk@0.3.0
+178 silly currentTree │ └── filesize@2.0.4
+178 silly currentTree ├─┬ grunt-usemin@2.0.2
+178 silly currentTree │ ├── debug@0.7.4
+178 silly currentTree │ └── lodash@1.0.2
+178 silly currentTree ├── grunt@0.4.5
+178 silly currentTree ├─┬ har-validator@2.0.6
+178 silly currentTree │ ├── ansi-styles@2.2.1
+178 silly currentTree │ ├── chalk@1.1.3
+178 silly currentTree │ └── commander@2.9.0
+178 silly currentTree ├── has-ansi@2.0.0
+178 silly currentTree ├── has-color@0.1.7
+178 silly currentTree ├── hawk@3.1.3
+178 silly currentTree ├── hoek@2.16.3
+178 silly currentTree ├── hogan.js@2.0.0
+178 silly currentTree ├── hooker@0.2.3
+178 silly currentTree ├── html-minifier@0.5.6
+178 silly currentTree ├── http-signature@1.1.1
+178 silly currentTree ├── iconv-lite@0.2.11
+178 silly currentTree ├── inherits@2.0.3
+178 silly currentTree ├── ini@1.0.5
+178 silly currentTree ├─┬ is-my-json-valid@2.14.0
+178 silly currentTree │ └── xtend@4.0.1
+178 silly currentTree ├── is-property@1.0.2
+178 silly currentTree ├── is-typedarray@1.0.0
+178 silly currentTree ├── isarray@0.0.1
+178 silly currentTree ├── isstream@0.1.2
+178 silly currentTree ├── jodid25519@1.0.2
+178 silly currentTree ├── jpegtran-bin@0.2.8
+178 silly currentTree ├── js-yaml@2.0.5
+178 silly currentTree ├── jsbn@0.1.0
+178 silly currentTree ├─┬ jshint-stylish@0.1.5
+178 silly currentTree │ ├── ansi-styles@1.0.0
+178 silly currentTree │ ├── chalk@0.4.0
+178 silly currentTree │ └── strip-ansi@0.1.1
+178 silly currentTree ├─┬ jshint@2.3.0
+178 silly currentTree │ └── underscore@1.4.4
+178 silly currentTree ├── json-schema@0.2.3
+178 silly currentTree ├── json-stringify-safe@5.0.1
+178 silly currentTree ├── jsonpointer@2.0.0
+178 silly currentTree ├── jsprim@1.3.1
+178 silly currentTree ├── karma-ng-html2js-preprocessor@1.0.0
+178 silly currentTree ├── karma-ng-scenario@1.0.0
+178 silly currentTree ├── keypress@0.1.0
+178 silly currentTree ├── load-grunt-tasks@0.4.0
+178 silly currentTree ├── lodash@0.9.2
+178 silly currentTree ├─┬ log-symbols@1.0.2
+178 silly currentTree │ ├── ansi-styles@2.2.1
+178 silly currentTree │ └── chalk@1.1.3
+178 silly currentTree ├── lpad@0.2.1
+178 silly currentTree ├── lru-cache@2.7.3
+178 silly currentTree ├── match-stream@0.0.1
+178 silly currentTree ├── mime-db@1.24.0
+178 silly currentTree ├── mime-types@2.1.12
+178 silly currentTree ├── mime@1.2.11
+178 silly currentTree ├── minimatch@0.2.14
+178 silly currentTree ├── minimist@0.0.10
+178 silly currentTree ├── mkdirp@0.3.5
+178 silly currentTree ├── mout@0.9.1
+178 silly currentTree ├── ms@0.7.1
+178 silly currentTree ├─┬ multimatch@0.1.0
+178 silly currentTree │ └── lodash@2.4.2
+178 silly currentTree ├── mute-stream@0.0.6
+178 silly currentTree ├── natives@1.1.0
+178 silly currentTree ├─┬ ngmin@0.4.1
+178 silly currentTree │ └── commander@1.1.1
+178 silly currentTree ├── node-uuid@1.4.7
+178 silly currentTree ├── nopt@1.0.10
+178 silly currentTree ├─┬ noptify@0.0.3
+178 silly currentTree │ └── nopt@2.0.0
+178 silly currentTree ├── npmlog@0.1.1
+178 silly currentTree ├── oauth-sign@0.8.2
+178 silly currentTree ├── object-assign@0.3.1
+178 silly currentTree ├── object-keys@0.4.0
+178 silly currentTree ├── open@0.0.4
+178 silly currentTree ├── optimist@0.6.1
+178 silly currentTree ├── optipng-bin@0.3.11
+178 silly currentTree ├── os-homedir@1.0.1
+178 silly currentTree ├── os-tmpdir@1.0.1
+178 silly currentTree ├── osenv@0.0.3
+178 silly currentTree ├── over@0.0.5
+178 silly currentTree ├── pad-stdio@0.1.1
+178 silly currentTree ├── pause@0.0.1
+178 silly currentTree ├── pinkie-promise@2.0.1
+178 silly currentTree ├── pinkie@2.0.4
+178 silly currentTree ├─┬ pngquant-bin@0.1.7
+178 silly currentTree │ ├── ansi-styles@1.0.0
+178 silly currentTree │ ├── bin-wrapper@0.2.4
+178 silly currentTree │ ├── chalk@0.4.0
+178 silly currentTree │ └── strip-ansi@0.1.1
+178 silly currentTree ├── process-nextick-args@1.0.7
+178 silly currentTree ├── promptly@0.1.0
+178 silly currentTree ├── proto-list@1.2.4
+178 silly currentTree ├── pullstream@0.4.1
+178 silly currentTree ├── q@0.8.12
+178 silly currentTree ├── qs@0.6.5
+178 silly currentTree ├── range-parser@0.0.4
+178 silly currentTree ├─┬ rc@0.0.8
+178 silly currentTree │ └── optimist@0.3.7
+178 silly currentTree ├─┬ read-package-json@0.1.13
+178 silly currentTree │ └── lru-cache@2.0.4
+178 silly currentTree ├── read@1.0.7
+178 silly currentTree ├── readable-stream@1.0.34
+178 silly currentTree ├─┬ request@2.75.0
+178 silly currentTree │ └── qs@6.2.1
+178 silly currentTree ├── rimraf@2.2.8
+178 silly currentTree ├── sax@0.5.8
+178 silly currentTree ├── semver@1.1.4
+178 silly currentTree ├── send@0.1.1
+178 silly currentTree ├── setimmediate@1.0.5
+178 silly currentTree ├── shelljs@0.1.4
+178 silly currentTree ├── sigmund@1.0.1
+178 silly currentTree ├── slice-stream@1.0.0
+178 silly currentTree ├── slide@1.1.6
+178 silly currentTree ├── sntp@1.0.9
+178 silly currentTree ├── source-map@0.1.43
+178 silly currentTree ├── sprintf-js@1.0.3
+178 silly currentTree ├─┬ sshpk@1.10.0
+178 silly currentTree │ └── assert-plus@1.0.0
+178 silly currentTree ├── stable@0.1.5
+178 silly currentTree ├── stream-combiner@0.0.4
+178 silly currentTree ├── string_decoder@0.10.31
+178 silly currentTree ├── stringstream@0.0.5
+178 silly currentTree ├── strip-ansi@3.0.1
+178 silly currentTree ├── supports-color@2.0.0
+178 silly currentTree ├─┬ svgo@0.3.7
+178 silly currentTree │ ├── argparse@1.0.7
+178 silly currentTree │ ├── esprima@2.7.3
+178 silly currentTree │ └── js-yaml@3.6.1
+178 silly currentTree ├── tar@0.1.20
+178 silly currentTree ├── tempfile@0.1.3
+178 silly currentTree ├── text-table@0.2.0
+178 silly currentTree ├── through2@0.4.2
+178 silly currentTree ├─┬ time-grunt@0.2.10
+178 silly currentTree │ ├── ansi-styles@1.0.0
+178 silly currentTree │ ├── chalk@0.4.0
+178 silly currentTree │ └── strip-ansi@0.1.1
+178 silly currentTree ├─┬ tiny-lr@0.0.4
+178 silly currentTree │ ├── debug@0.7.4
+178 silly currentTree │ └── qs@0.5.6
+178 silly currentTree ├── tmp@0.0.23
+178 silly currentTree ├── tough-cookie@2.3.1
+178 silly currentTree ├── traverse@0.3.9
+178 silly currentTree ├── tunnel-agent@0.4.3
+178 silly currentTree ├── tweetnacl@0.13.3
+178 silly currentTree ├─┬ uglify-js@2.4.24
+178 silly currentTree │ ├── async@0.2.10
+178 silly currentTree │ └── source-map@0.1.34
+178 silly currentTree ├── uglify-to-browserify@1.0.2
+178 silly currentTree ├── underscore.string@2.2.1
+178 silly currentTree ├── underscore@1.7.0
+178 silly currentTree ├── unzip@0.1.7
+178 silly currentTree ├─┬ update-notifier@0.1.10
+178 silly currentTree │ ├── ansi-styles@1.0.0
+178 silly currentTree │ ├── chalk@0.4.0
+178 silly currentTree │ ├── semver@2.3.2
+178 silly currentTree │ └── strip-ansi@0.1.1
+178 silly currentTree ├── user-home@1.1.1
+178 silly currentTree ├── util-deprecate@1.0.2
+178 silly currentTree ├── uuid@1.4.2
+178 silly currentTree ├── verror@1.3.6
+178 silly currentTree ├── whet.extend@0.9.9
+178 silly currentTree ├── which@1.0.9
+178 silly currentTree ├── window-size@0.1.0
+178 silly currentTree ├─┬ wiredep@1.2.2
+178 silly currentTree │ ├── glob@3.2.11
+178 silly currentTree │ ├── lodash@1.3.1
+178 silly currentTree │ └── minimatch@0.3.0
+178 silly currentTree ├── wordwrap@0.0.3
+178 silly currentTree ├── xdg-basedir@1.0.1
+178 silly currentTree ├── xtend@2.1.2
+178 silly currentTree ├─┬ yargs@3.5.4
+178 silly currentTree │ └── wordwrap@0.0.2
+178 silly currentTree └── zlib-browserify@0.0.1
+179 silly idealTree socialwallii@0.0.0
+179 silly idealTree ├── abbrev@1.0.9
+179 silly idealTree ├── adm-zip@0.4.7
+179 silly idealTree ├── amdefine@1.0.0
+179 silly idealTree ├── ansi-regex@2.0.0
+179 silly idealTree ├── ansi-styles@0.1.2
+179 silly idealTree ├── ansi@0.3.1
+179 silly idealTree ├── archy@0.0.2
+179 silly idealTree ├─┬ argparse@0.1.16
+179 silly idealTree │ └── underscore.string@2.4.0
+179 silly idealTree ├── asn1@0.2.3
+179 silly idealTree ├── assert-plus@0.2.0
+179 silly idealTree ├── astral-angular-annotate@0.0.2
+179 silly idealTree ├── astral-pass@0.1.0
+179 silly idealTree ├── astral@0.1.0
+179 silly idealTree ├── async@0.1.22
+179 silly idealTree ├── asynckit@0.4.0
+179 silly idealTree ├── aws-sign2@0.6.0
+179 silly idealTree ├── aws4@1.4.1
+179 silly idealTree ├─┬ bcrypt-pbkdf@1.0.0
+179 silly idealTree │ └── tweetnacl@0.14.3
+179 silly idealTree ├── bin-build@0.1.1
+179 silly idealTree ├── bin-check@0.1.5
+179 silly idealTree ├── bin-wrapper@0.3.4
+179 silly idealTree ├── binary@0.3.0
+179 silly idealTree ├─┬ bl@1.1.2
+179 silly idealTree │ ├── isarray@1.0.0
+179 silly idealTree │ └── readable-stream@2.0.6
+179 silly idealTree ├── block-stream@0.0.9
+179 silly idealTree ├── boom@2.10.1
+179 silly idealTree ├─┬ bower-config@0.5.2
+179 silly idealTree │ └── graceful-fs@2.0.3
+179 silly idealTree ├─┬ bower@0.9.2
+179 silly idealTree │ ├── async@0.2.10
+179 silly idealTree │ ├── graceful-fs@1.1.14
+179 silly idealTree │ ├── lodash@1.0.2
+179 silly idealTree │ ├── nopt@2.0.0
+179 silly idealTree │ ├─┬ request@2.11.4
+179 silly idealTree │ │ ├─┬ form-data@0.0.3
+179 silly idealTree │ │ │ ├── async@0.1.9
+179 silly idealTree │ │ │ └─┬ combined-stream@0.0.3
+179 silly idealTree │ │ │   └── delayed-stream@0.0.5
+179 silly idealTree │ │ └── mime@1.2.7
+179 silly idealTree │ └── rimraf@2.0.3
+179 silly idealTree ├── buffer-crc32@0.2.1
+179 silly idealTree ├── buffers@0.1.1
+179 silly idealTree ├── bytes@0.2.0
+179 silly idealTree ├── camelcase@1.2.1
+179 silly idealTree ├── caseless@0.11.0
+179 silly idealTree ├── chainsaw@0.1.0
+179 silly idealTree ├── chalk@0.1.1
+179 silly idealTree ├── clean-css@2.0.8
+179 silly idealTree ├── cli@0.4.5
+179 silly idealTree ├── clone@0.1.19
+179 silly idealTree ├── coa@0.3.9
+179 silly idealTree ├── coffee-script@1.3.3
+179 silly idealTree ├── colors@0.6.2
+179 silly idealTree ├── combined-stream@1.0.5
+179 silly idealTree ├── commander@2.0.0
+179 silly idealTree ├── config-chain@0.3.4
+179 silly idealTree ├─┬ configstore@0.3.2
+179 silly idealTree │ ├── argparse@1.0.7
+179 silly idealTree │ ├── esprima@2.7.3
+179 silly idealTree │ ├── graceful-fs@3.0.11
+179 silly idealTree │ ├── js-yaml@3.6.1
+179 silly idealTree │ ├── minimist@0.0.8
+179 silly idealTree │ ├── mkdirp@0.5.1
+179 silly idealTree │ ├── object-assign@2.1.1
+179 silly idealTree │ ├── osenv@0.1.3
+179 silly idealTree │ └── uuid@2.0.3
+179 silly idealTree ├── connect-livereload@0.2.0
+179 silly idealTree ├── connect@2.7.11
+179 silly idealTree ├── console-browserify@0.1.6
+179 silly idealTree ├── cookie-signature@1.0.1
+179 silly idealTree ├── cookie@0.0.5
+179 silly idealTree ├── core-util-is@1.0.2
+179 silly idealTree ├── cryptiles@2.0.5
+179 silly idealTree ├── css-parse@1.6.0
+179 silly idealTree ├── css-stringify@1.4.1
+179 silly idealTree ├── dargs@0.1.0
+179 silly idealTree ├─┬ dashdash@1.14.0
+179 silly idealTree │ └── assert-plus@1.0.0
+179 silly idealTree ├── date-time@0.1.1
+179 silly idealTree ├── dateformat@1.0.2-1.2.3
+179 silly idealTree ├── debug@2.2.0
+179 silly idealTree ├── decamelize@1.2.0
+179 silly idealTree ├─┬ decompress@0.2.5
+179 silly idealTree │ └── nopt@2.2.1
+179 silly idealTree ├── delayed-stream@1.0.0
+179 silly idealTree ├─┬ download@0.1.19
+179 silly idealTree │ └── nopt@2.2.1
+179 silly idealTree ├── duplexer@0.1.1
+179 silly idealTree ├── each-async@0.1.3
+179 silly idealTree ├── ecc-jsbn@0.1.1
+179 silly idealTree ├── escape-string-regexp@1.0.5
+179 silly idealTree ├── escodegen@0.0.28
+179 silly idealTree ├── esprima@1.0.4
+179 silly idealTree ├── estraverse@1.3.2
+179 silly idealTree ├── eventemitter2@0.4.14
+179 silly idealTree ├── executable@0.1.3
+179 silly idealTree ├── exit@0.1.2
+179 silly idealTree ├── ext-list@0.2.0
+179 silly idealTree ├─┬ ext-name@1.0.1
+179 silly idealTree │ └── underscore.string@2.3.3
+179 silly idealTree ├── extend@3.0.0
+179 silly idealTree ├── extsprintf@1.0.2
+179 silly idealTree ├── faye-websocket@0.4.4
+179 silly idealTree ├── filesize@1.10.0
+179 silly idealTree ├── find-file@0.1.4
+179 silly idealTree ├─┬ findup-sync@0.1.3
+179 silly idealTree │ ├── glob@3.2.11
+179 silly idealTree │ ├── lodash@2.4.2
+179 silly idealTree │ └── minimatch@0.3.0
+179 silly idealTree ├── forever-agent@0.6.1
+179 silly idealTree ├── form-data@2.0.0
+179 silly idealTree ├── formidable@1.0.14
+179 silly idealTree ├── fresh@0.1.0
+179 silly idealTree ├─┬ fstream@0.1.31
+179 silly idealTree │ ├── graceful-fs@3.0.11
+179 silly idealTree │ ├── minimist@0.0.8
+179 silly idealTree │ └── mkdirp@0.5.1
+179 silly idealTree ├── gaze@0.4.3
+179 silly idealTree ├── generate-function@2.0.0
+179 silly idealTree ├── generate-object-property@1.2.0
+179 silly idealTree ├── get-stdin@0.1.0
+179 silly idealTree ├── get-urls@0.1.2
+179 silly idealTree ├── getobject@0.1.0
+179 silly idealTree ├─┬ getpass@0.1.6
+179 silly idealTree │ └── assert-plus@1.0.0
+179 silly idealTree ├── gifsicle@0.1.7
+179 silly idealTree ├─┬ glob@3.1.21
+179 silly idealTree │ └── inherits@1.0.2
+179 silly idealTree ├─┬ globule@0.1.0
+179 silly idealTree │ └── lodash@1.0.2
+179 silly idealTree ├─┬ google-cdn@0.1.4
+179 silly idealTree │ ├── debug@0.7.4
+179 silly idealTree │ └── semver@2.0.11
+179 silly idealTree ├── got@0.2.0
+179 silly idealTree ├── graceful-fs@1.2.3
+179 silly idealTree ├── graceful-readlink@1.0.1
+179 silly idealTree ├─┬ grunt-autoprefixer@0.4.2
+179 silly idealTree │ └── autoprefixer@0.8.20131213
+179 silly idealTree ├── grunt-bower-install@1.0.2
+179 silly idealTree ├─┬ grunt-concurrent@0.5.0
+179 silly idealTree │ └── async@0.2.10
+179 silly idealTree ├── grunt-contrib-clean@0.5.0
+179 silly idealTree ├─┬ grunt-contrib-compass@0.7.2
+179 silly idealTree │ └── async@0.2.10
+179 silly idealTree ├── grunt-contrib-concat@0.3.0
+179 silly idealTree ├── grunt-contrib-connect@0.5.0
+179 silly idealTree ├── grunt-contrib-copy@0.4.1
+179 silly idealTree ├── grunt-contrib-cssmin@0.7.0
+179 silly idealTree ├── grunt-contrib-htmlmin@0.1.3
+179 silly idealTree ├─┬ grunt-contrib-imagemin@0.3.0
+179 silly idealTree │ ├── ansi-styles@0.2.0
+179 silly idealTree │ └── chalk@0.2.1
+179 silly idealTree ├── grunt-contrib-jshint@0.7.2
+179 silly idealTree ├── grunt-contrib-uglify@0.2.7
+179 silly idealTree ├── grunt-contrib-watch@0.5.3
+179 silly idealTree ├── grunt-google-cdn@0.2.2
+179 silly idealTree ├─┬ grunt-karma@2.0.0
+179 silly idealTree │ └── lodash@3.10.1
+179 silly idealTree ├─┬ grunt-legacy-log-utils@0.1.1
+179 silly idealTree │ ├── lodash@2.4.2
+179 silly idealTree │ └── underscore.string@2.3.3
+179 silly idealTree ├─┬ grunt-legacy-log@0.1.3
+179 silly idealTree │ ├── lodash@2.4.2
+179 silly idealTree │ └── underscore.string@2.3.3
+179 silly idealTree ├── grunt-legacy-util@0.2.0
+179 silly idealTree ├── grunt-lib-contrib@0.6.1
+179 silly idealTree ├─┬ grunt-newer@0.6.1
+179 silly idealTree │ ├── async@0.2.9
+179 silly idealTree │ ├── graceful-fs@2.0.3
+179 silly idealTree │ └── rimraf@2.2.4
+179 silly idealTree ├── grunt-ngmin@0.0.3
+179 silly idealTree ├── grunt-rev@0.1.0
+179 silly idealTree ├─┬ grunt-svgmin@0.2.1
+179 silly idealTree │ ├── ansi-styles@0.2.0
+179 silly idealTree │ ├── chalk@0.3.0
+179 silly idealTree │ └── filesize@2.0.4
+179 silly idealTree ├─┬ grunt-usemin@2.0.2
+179 silly idealTree │ ├── debug@0.7.4
+179 silly idealTree │ └── lodash@1.0.2
+179 silly idealTree ├── grunt@0.4.5
+179 silly idealTree ├─┬ har-validator@2.0.6
+179 silly idealTree │ ├── ansi-styles@2.2.1
+179 silly idealTree │ ├── chalk@1.1.3
+179 silly idealTree │ └── commander@2.9.0
+179 silly idealTree ├── has-ansi@2.0.0
+179 silly idealTree ├── has-color@0.1.7
+179 silly idealTree ├── hawk@3.1.3
+179 silly idealTree ├── hoek@2.16.3
+179 silly idealTree ├── hogan.js@2.0.0
+179 silly idealTree ├── hooker@0.2.3
+179 silly idealTree ├── html-minifier@0.5.6
+179 silly idealTree ├── http-signature@1.1.1
+179 silly idealTree ├── iconv-lite@0.2.11
+179 silly idealTree ├── inherits@2.0.3
+179 silly idealTree ├── ini@1.0.5
+179 silly idealTree ├─┬ is-my-json-valid@2.14.0
+179 silly idealTree │ └── xtend@4.0.1
+179 silly idealTree ├── is-property@1.0.2
+179 silly idealTree ├── is-typedarray@1.0.0
+179 silly idealTree ├── isarray@0.0.1
+179 silly idealTree ├── isstream@0.1.2
+179 silly idealTree ├── jodid25519@1.0.2
+179 silly idealTree ├── jpegtran-bin@0.2.8
+179 silly idealTree ├── js-yaml@2.0.5
+179 silly idealTree ├── jsbn@0.1.0
+179 silly idealTree ├─┬ jshint-stylish@0.1.5
+179 silly idealTree │ ├── ansi-styles@1.0.0
+179 silly idealTree │ ├── chalk@0.4.0
+179 silly idealTree │ └── strip-ansi@0.1.1
+179 silly idealTree ├─┬ jshint@2.3.0
+179 silly idealTree │ └── underscore@1.4.4
+179 silly idealTree ├── json-schema@0.2.3
+179 silly idealTree ├── json-stringify-safe@5.0.1
+179 silly idealTree ├── jsonpointer@2.0.0
+179 silly idealTree ├── jsprim@1.3.1
+179 silly idealTree ├── karma-ng-html2js-preprocessor@1.0.0
+179 silly idealTree ├── karma-ng-scenario@1.0.0
+179 silly idealTree ├── keypress@0.1.0
+179 silly idealTree ├── load-grunt-tasks@0.4.0
+179 silly idealTree ├── lodash@0.9.2
+179 silly idealTree ├─┬ log-symbols@1.0.2
+179 silly idealTree │ ├── ansi-styles@2.2.1
+179 silly idealTree │ └── chalk@1.1.3
+179 silly idealTree ├── lpad@0.2.1
+179 silly idealTree ├── lru-cache@2.7.3
+179 silly idealTree ├── match-stream@0.0.1
+179 silly idealTree ├── mime-db@1.24.0
+179 silly idealTree ├── mime-types@2.1.12
+179 silly idealTree ├── mime@1.2.11
+179 silly idealTree ├── minimatch@0.2.14
+179 silly idealTree ├── minimist@0.0.10
+179 silly idealTree ├── mkdirp@0.3.5
+179 silly idealTree ├── mout@0.9.1
+179 silly idealTree ├── ms@0.7.1
+179 silly idealTree ├─┬ multimatch@0.1.0
+179 silly idealTree │ └── lodash@2.4.2
+179 silly idealTree ├── mute-stream@0.0.6
+179 silly idealTree ├── natives@1.1.0
+179 silly idealTree ├─┬ ngmin@0.4.1
+179 silly idealTree │ └── commander@1.1.1
+179 silly idealTree ├── node-uuid@1.4.7
+179 silly idealTree ├── nopt@1.0.10
+179 silly idealTree ├─┬ noptify@0.0.3
+179 silly idealTree │ └── nopt@2.0.0
+179 silly idealTree ├── npmlog@0.1.1
+179 silly idealTree ├── oauth-sign@0.8.2
+179 silly idealTree ├── object-assign@0.3.1
+179 silly idealTree ├── object-keys@0.4.0
+179 silly idealTree ├── open@0.0.4
+179 silly idealTree ├── optimist@0.6.1
+179 silly idealTree ├── optipng-bin@0.3.11
+179 silly idealTree ├── os-homedir@1.0.1
+179 silly idealTree ├── os-tmpdir@1.0.1
+179 silly idealTree ├── osenv@0.0.3
+179 silly idealTree ├── over@0.0.5
+179 silly idealTree ├── pad-stdio@0.1.1
+179 silly idealTree ├── pause@0.0.1
+179 silly idealTree ├── pinkie-promise@2.0.1
+179 silly idealTree ├── pinkie@2.0.4
+179 silly idealTree ├─┬ pngquant-bin@0.1.7
+179 silly idealTree │ ├── ansi-styles@1.0.0
+179 silly idealTree │ ├── bin-wrapper@0.2.4
+179 silly idealTree │ ├── chalk@0.4.0
+179 silly idealTree │ └── strip-ansi@0.1.1
+179 silly idealTree ├── process-nextick-args@1.0.7
+179 silly idealTree ├── promptly@0.1.0
+179 silly idealTree ├── proto-list@1.2.4
+179 silly idealTree ├── pullstream@0.4.1
+179 silly idealTree ├── q@0.8.12
+179 silly idealTree ├── qs@0.6.5
+179 silly idealTree ├── range-parser@0.0.4
+179 silly idealTree ├─┬ rc@0.0.8
+179 silly idealTree │ └── optimist@0.3.7
+179 silly idealTree ├─┬ read-package-json@0.1.13
+179 silly idealTree │ └── lru-cache@2.0.4
+179 silly idealTree ├── read@1.0.7
+179 silly idealTree ├── readable-stream@1.0.34
+179 silly idealTree ├─┬ request@2.75.0
+179 silly idealTree │ └── qs@6.2.1
+179 silly idealTree ├── rimraf@2.2.8
+179 silly idealTree ├── sax@0.5.8
+179 silly idealTree ├── semver@1.1.4
+179 silly idealTree ├── send@0.1.1
+179 silly idealTree ├── setimmediate@1.0.5
+179 silly idealTree ├── shelljs@0.1.4
+179 silly idealTree ├── sigmund@1.0.1
+179 silly idealTree ├── slice-stream@1.0.0
+179 silly idealTree ├── slide@1.1.6
+179 silly idealTree ├── sntp@1.0.9
+179 silly idealTree ├── source-map@0.1.43
+179 silly idealTree ├── sprintf-js@1.0.3
+179 silly idealTree ├─┬ sshpk@1.10.0
+179 silly idealTree │ └── assert-plus@1.0.0
+179 silly idealTree ├── stable@0.1.5
+179 silly idealTree ├── stream-combiner@0.0.4
+179 silly idealTree ├── string_decoder@0.10.31
+179 silly idealTree ├── stringstream@0.0.5
+179 silly idealTree ├── strip-ansi@3.0.1
+179 silly idealTree ├── supports-color@2.0.0
+179 silly idealTree ├─┬ svgo@0.3.7
+179 silly idealTree │ ├── argparse@1.0.7
+179 silly idealTree │ ├── esprima@2.7.3
+179 silly idealTree │ └── js-yaml@3.6.1
+179 silly idealTree ├── tar@0.1.20
+179 silly idealTree ├── tempfile@0.1.3
+179 silly idealTree ├── text-table@0.2.0
+179 silly idealTree ├── through2@0.4.2
+179 silly idealTree ├─┬ time-grunt@0.2.10
+179 silly idealTree │ ├── ansi-styles@1.0.0
+179 silly idealTree │ ├── chalk@0.4.0
+179 silly idealTree │ └── strip-ansi@0.1.1
+179 silly idealTree ├─┬ tiny-lr@0.0.4
+179 silly idealTree │ ├── debug@0.7.4
+179 silly idealTree │ └── qs@0.5.6
+179 silly idealTree ├── tmp@0.0.23
+179 silly idealTree ├── tough-cookie@2.3.1
+179 silly idealTree ├── traverse@0.3.9
+179 silly idealTree ├── tunnel-agent@0.4.3
+179 silly idealTree ├── tweetnacl@0.13.3
+179 silly idealTree ├─┬ uglify-js@2.4.24
+179 silly idealTree │ ├── async@0.2.10
+179 silly idealTree │ └── source-map@0.1.34
+179 silly idealTree ├── uglify-to-browserify@1.0.2
+179 silly idealTree ├── underscore.string@2.2.1
+179 silly idealTree ├── underscore@1.7.0
+179 silly idealTree ├── unzip@0.1.7
+179 silly idealTree ├─┬ update-notifier@0.1.10
+179 silly idealTree │ ├── ansi-styles@1.0.0
+179 silly idealTree │ ├── chalk@0.4.0
+179 silly idealTree │ ├── semver@2.3.2
+179 silly idealTree │ └── strip-ansi@0.1.1
+179 silly idealTree ├── user-home@1.1.1
+179 silly idealTree ├── util-deprecate@1.0.2
+179 silly idealTree ├── uuid@1.4.2
+179 silly idealTree ├── verror@1.3.6
+179 silly idealTree ├── whet.extend@0.9.9
+179 silly idealTree ├── which@1.0.9
+179 silly idealTree ├── window-size@0.1.0
+179 silly idealTree ├─┬ wiredep@1.2.2
+179 silly idealTree │ ├── glob@3.2.11
+179 silly idealTree │ ├── lodash@1.3.1
+179 silly idealTree │ └── minimatch@0.3.0
+179 silly idealTree ├── wordwrap@0.0.3
+179 silly idealTree ├── xdg-basedir@1.0.1
+179 silly idealTree ├── xtend@2.1.2
+179 silly idealTree ├─┬ yargs@3.5.4
+179 silly idealTree │ └── wordwrap@0.0.2
+179 silly idealTree └── zlib-browserify@0.0.1
+180 silly generateActionsToTake Starting
+181 silly install generateActionsToTake
+182 silly generateActionsToTake Finishing
+183 silly diffTrees action count 4
+184 silly diffTrees add gifsicle@0.1.7
+185 silly diffTrees add ansi-styles@0.2.0
+186 silly diffTrees add chalk@0.2.1
+187 silly diffTrees add grunt-contrib-imagemin@0.3.0
+188 silly decomposeActions action count 32
+189 silly decomposeActions fetch gifsicle@0.1.7
+190 silly decomposeActions extract gifsicle@0.1.7
+191 silly decomposeActions test gifsicle@0.1.7
+192 silly decomposeActions preinstall gifsicle@0.1.7
+193 silly decomposeActions build gifsicle@0.1.7
+194 silly decomposeActions install gifsicle@0.1.7
+195 silly decomposeActions postinstall gifsicle@0.1.7
+196 silly decomposeActions finalize gifsicle@0.1.7
+197 silly decomposeActions fetch ansi-styles@0.2.0
+198 silly decomposeActions extract ansi-styles@0.2.0
+199 silly decomposeActions test ansi-styles@0.2.0
+200 silly decomposeActions preinstall ansi-styles@0.2.0
+201 silly decomposeActions build ansi-styles@0.2.0
+202 silly decomposeActions install ansi-styles@0.2.0
+203 silly decomposeActions postinstall ansi-styles@0.2.0
+204 silly decomposeActions finalize ansi-styles@0.2.0
+205 silly decomposeActions fetch chalk@0.2.1
+206 silly decomposeActions extract chalk@0.2.1
+207 silly decomposeActions test chalk@0.2.1
+208 silly decomposeActions preinstall chalk@0.2.1
+209 silly decomposeActions build chalk@0.2.1
+210 silly decomposeActions install chalk@0.2.1
+211 silly decomposeActions postinstall chalk@0.2.1
+212 silly decomposeActions finalize chalk@0.2.1
+213 silly decomposeActions fetch grunt-contrib-imagemin@0.3.0
+214 silly decomposeActions extract grunt-contrib-imagemin@0.3.0
+215 silly decomposeActions test grunt-contrib-imagemin@0.3.0
+216 silly decomposeActions preinstall grunt-contrib-imagemin@0.3.0
+217 silly decomposeActions build grunt-contrib-imagemin@0.3.0
+218 silly decomposeActions install grunt-contrib-imagemin@0.3.0
+219 silly decomposeActions postinstall grunt-contrib-imagemin@0.3.0
+220 silly decomposeActions finalize grunt-contrib-imagemin@0.3.0
+221 silly runTopLevelLifecycles Starting
+222 silly install runPreinstallTopLevelLifecycles
+223 silly preinstall socialwallii@0.0.0 /Users/Brendan/Dev/socialwall-II/socialwallii-a1bb0702
+224 info lifecycle socialwallii@0.0.0~preinstall: socialwallii@0.0.0
+225 silly lifecycle socialwallii@0.0.0~preinstall: no script for preinstall, continuing
+226 silly executeActions Starting
+227 silly install executeActions
+228 silly doSerial global-install 0
+229 silly doParallel fetch 4
+230 verbose correctMkdir /Users/Brendan/.npm/_locks correctMkdir not in flight; initializing
+231 verbose lock using /Users/Brendan/.npm/_locks/staging-77e0c70b4cb4a294.lock for /Users/Brendan/Dev/socialwall-II/node_modules/.staging
+232 silly doParallel extract 4
+233 silly extract gifsicle@0.1.7
+234 silly extract ansi-styles@0.2.0
+235 silly extract chalk@0.2.1
+236 silly extract grunt-contrib-imagemin@0.3.0
+237 verbose unbuild node_modules/.staging/chalk-b4de62c5
+238 verbose unbuild node_modules/.staging/ansi-styles-d3eacd37
+239 verbose unbuild node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+240 verbose unbuild node_modules/.staging/gifsicle-b11546d8
+241 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5 is being purged from base /Users/Brendan/Dev/socialwall-II
+242 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5
+243 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37 is being purged from base /Users/Brendan/Dev/socialwall-II
+244 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37
+245 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb is being purged from base /Users/Brendan/Dev/socialwall-II
+246 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+247 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8 is being purged from base /Users/Brendan/Dev/socialwall-II
+248 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+249 verbose tar unpack /Users/Brendan/.npm/chalk/0.2.1/package.tgz
+250 verbose tar unpacking to /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5
+251 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5 is being purged
+252 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5
+253 verbose tar unpack /Users/Brendan/.npm/ansi-styles/0.2.0/package.tgz
+254 verbose tar unpacking to /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37
+255 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37 is being purged
+256 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37
+257 verbose tar unpack /Users/Brendan/.npm/grunt-contrib-imagemin/0.3.0/package.tgz
+258 verbose tar unpacking to /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+259 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb is being purged
+260 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+261 verbose tar unpack /Users/Brendan/.npm/gifsicle/0.1.7/package.tgz
+262 verbose tar unpacking to /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+263 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8 is being purged
+264 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+265 silly gunzTarPerm modes [ '755', '644' ]
+266 silly gunzTarPerm modes [ '755', '644' ]
+267 silly gunzTarPerm modes [ '755', '644' ]
+268 silly gunzTarPerm modes [ '755', '644' ]
+269 silly gunzTarPerm extractEntry package.json
+270 silly gunzTarPerm extractEntry package.json
+271 silly gunzTarPerm extractEntry package.json
+272 silly gunzTarPerm extractEntry package.json
+273 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+274 silly gunzTarPerm extractEntry chalk.js
+275 silly gunzTarPerm extractEntry readme.md
+276 silly gunzTarPerm extractEntry ansi-styles.js
+277 silly gunzTarPerm extractEntry readme.md
+278 silly gunzTarPerm extractEntry README.md
+279 silly gunzTarPerm extractEntry tasks/imagemin.js
+280 silly gunzTarPerm extractEntry README.md
+281 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+282 silly gunzTarPerm extractEntry cli.js
+283 silly gunzTarPerm modified mode [ 'cli.js', 438, 420 ]
+284 silly gunzTarPerm extractEntry index.js
+285 silly gunzTarPerm modified mode [ 'index.js', 438, 420 ]
+286 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5/node_modules is being purged
+287 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5/node_modules
+288 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37/node_modules is being purged
+289 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37/node_modules
+290 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb/node_modules is being purged
+291 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb/node_modules
+292 silly gentlyRm /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8/node_modules is being purged
+293 verbose gentlyRm don't care about contents; nuking /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8/node_modules
+294 silly doParallel preinstall 4
+295 silly preinstall gifsicle@0.1.7 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+296 info lifecycle gifsicle@0.1.7~preinstall: gifsicle@0.1.7
+297 silly preinstall ansi-styles@0.2.0 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37
+298 info lifecycle ansi-styles@0.2.0~preinstall: ansi-styles@0.2.0
+299 silly preinstall chalk@0.2.1 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5
+300 info lifecycle chalk@0.2.1~preinstall: chalk@0.2.1
+301 silly preinstall grunt-contrib-imagemin@0.3.0 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+302 info lifecycle grunt-contrib-imagemin@0.3.0~preinstall: grunt-contrib-imagemin@0.3.0
+303 silly lifecycle gifsicle@0.1.7~preinstall: no script for preinstall, continuing
+304 silly lifecycle ansi-styles@0.2.0~preinstall: no script for preinstall, continuing
+305 silly lifecycle chalk@0.2.1~preinstall: no script for preinstall, continuing
+306 silly lifecycle grunt-contrib-imagemin@0.3.0~preinstall: no script for preinstall, continuing
+307 silly doReverseSerial remove 0
+308 silly doSerial move 0
+309 silly doSerial finalize 4
+310 silly finalize /Users/Brendan/Dev/socialwall-II/node_modules/gifsicle
+311 silly finalize /Users/Brendan/Dev/socialwall-II/node_modules/grunt-contrib-imagemin/node_modules/ansi-styles
+312 silly finalize /Users/Brendan/Dev/socialwall-II/node_modules/grunt-contrib-imagemin/node_modules/chalk
+313 silly finalize /Users/Brendan/Dev/socialwall-II/node_modules/grunt-contrib-imagemin
+314 silly doSerial build 4
+315 silly build gifsicle@0.1.7
+316 info linkStuff gifsicle@0.1.7
+317 silly linkStuff gifsicle@0.1.7 has /Users/Brendan/Dev/socialwall-II/node_modules as its parent node_modules
+318 verbose linkBins gifsicle@0.1.7
+319 verbose link bins [ { gifsicle: 'cli.js' },
+319 verbose link bins   '/Users/Brendan/Dev/socialwall-II/node_modules/.bin',
+319 verbose link bins   false ]
+320 verbose linkMans gifsicle@0.1.7
+321 silly build ansi-styles@0.2.0
+322 info linkStuff ansi-styles@0.2.0
+323 silly linkStuff ansi-styles@0.2.0 has /Users/Brendan/Dev/socialwall-II/node_modules/grunt-contrib-imagemin/node_modules as its parent node_modules
+324 verbose linkBins ansi-styles@0.2.0
+325 verbose linkMans ansi-styles@0.2.0
+326 silly build chalk@0.2.1
+327 info linkStuff chalk@0.2.1
+328 silly linkStuff chalk@0.2.1 has /Users/Brendan/Dev/socialwall-II/node_modules/grunt-contrib-imagemin/node_modules as its parent node_modules
+329 verbose linkBins chalk@0.2.1
+330 verbose linkMans chalk@0.2.1
+331 silly build grunt-contrib-imagemin@0.3.0
+332 info linkStuff grunt-contrib-imagemin@0.3.0
+333 silly linkStuff grunt-contrib-imagemin@0.3.0 has /Users/Brendan/Dev/socialwall-II/node_modules as its parent node_modules
+334 verbose linkBins grunt-contrib-imagemin@0.3.0
+335 verbose linkMans grunt-contrib-imagemin@0.3.0
+336 silly doSerial global-link 0
+337 silly doParallel update-linked 0
+338 silly doSerial install 4
+339 silly install gifsicle@0.1.7 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+340 info lifecycle gifsicle@0.1.7~install: gifsicle@0.1.7
+341 silly lifecycle gifsicle@0.1.7~install: no script for install, continuing
+342 silly install ansi-styles@0.2.0 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/ansi-styles-d3eacd37
+343 info lifecycle ansi-styles@0.2.0~install: ansi-styles@0.2.0
+344 silly lifecycle ansi-styles@0.2.0~install: no script for install, continuing
+345 silly install chalk@0.2.1 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/chalk-b4de62c5
+346 info lifecycle chalk@0.2.1~install: chalk@0.2.1
+347 silly lifecycle chalk@0.2.1~install: no script for install, continuing
+348 silly install grunt-contrib-imagemin@0.3.0 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/grunt-contrib-imagemin-4a751aeb
+349 info lifecycle grunt-contrib-imagemin@0.3.0~install: grunt-contrib-imagemin@0.3.0
+350 silly lifecycle grunt-contrib-imagemin@0.3.0~install: no script for install, continuing
+351 silly doSerial postinstall 4
+352 silly postinstall gifsicle@0.1.7 /Users/Brendan/Dev/socialwall-II/node_modules/.staging/gifsicle-b11546d8
+353 info lifecycle gifsicle@0.1.7~postinstall: gifsicle@0.1.7
+354 verbose lifecycle gifsicle@0.1.7~postinstall: unsafe-perm in lifecycle true
+355 verbose lifecycle gifsicle@0.1.7~postinstall: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Brendan/Dev/socialwall-II/node_modules/gifsicle/node_modules/.bin:/Users/Brendan/Dev/socialwall-II/node_modules/.bin:/usr/local/Cellar/node/6.6.0/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin
+356 verbose lifecycle gifsicle@0.1.7~postinstall: CWD: /Users/Brendan/Dev/socialwall-II/node_modules/gifsicle
+357 silly lifecycle gifsicle@0.1.7~postinstall: Args: [ '-c', 'node index.js' ]
+358 silly lifecycle gifsicle@0.1.7~postinstall: Returned: code: 1  signal: null
+359 info lifecycle gifsicle@0.1.7~postinstall: Failed to exec postinstall script
+360 verbose unlock done using /Users/Brendan/.npm/_locks/staging-77e0c70b4cb4a294.lock for /Users/Brendan/Dev/socialwall-II/node_modules/.staging
+361 silly rollbackFailedOptional Starting
+362 silly rollbackFailedOptional Finishing
+363 silly runTopLevelLifecycles Finishing
+364 silly install printInstalled
+365 warn grunt-karma@2.0.0 requires a peer of karma@^0.13.0 || >= 0.14.0-rc.0 but none was installed.
+366 warn karma-ng-html2js-preprocessor@1.0.0 requires a peer of karma@>=0.9 but none was installed.
+367 warn karma-ng-scenario@1.0.0 requires a peer of karma@>=0.9 but none was installed.
+368 warn socialwallii@0.0.0 No description
+369 warn socialwallii@0.0.0 No repository field.
+370 warn socialwallii@0.0.0 No license field.
+371 verbose stack Error: gifsicle@0.1.7 postinstall: `node index.js`
+371 verbose stack Exit status 1
+371 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
+371 verbose stack     at emitTwo (events.js:106:13)
+371 verbose stack     at EventEmitter.emit (events.js:191:7)
+371 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+371 verbose stack     at emitTwo (events.js:106:13)
+371 verbose stack     at ChildProcess.emit (events.js:191:7)
+371 verbose stack     at maybeClose (internal/child_process.js:877:16)
+371 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+372 verbose pkgid gifsicle@0.1.7
+373 verbose cwd /Users/Brendan/Dev/socialwall-II
+374 error Darwin 15.6.0
+375 error argv "/usr/local/Cellar/node/6.6.0/bin/node" "/usr/local/bin/npm" "install"
+376 error node v6.6.0
+377 error npm  v3.10.7
+378 error code ELIFECYCLE
+379 error gifsicle@0.1.7 postinstall: `node index.js`
+379 error Exit status 1
+380 error Failed at the gifsicle@0.1.7 postinstall script 'node index.js'.
+380 error Make sure you have the latest version of node.js and npm installed.
+380 error If you do, this is most likely a problem with the gifsicle package,
+380 error not with npm itself.
+380 error Tell the author that this fails on your system:
+380 error     node index.js
+380 error You can get information on how to open an issue for this project with:
+380 error     npm bugs gifsicle
+380 error Or if that isn't available, you can get their info via:
+380 error     npm owner ls gifsicle
+380 error There is likely additional logging output above.
+381 verbose exit [ 1, true ]
