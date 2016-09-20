@@ -12,25 +12,22 @@
 <div id="new-brick"
   ng-class="{'visible': newVisible}"
   ng-style="newBrickStyle">
-  <img id="new-brick-img" ng-src="{{ newBrick.gif }}" alt="New Brick">
+  <img id="new-brick-img" ng-src="{{ newBrick.jpg }}" alt="New Brick">
 </div>
 <div class="masonry-hidden">
   <div class="brick"
-    ng-style="colStyle"
     ng-repeat="brick in bricks[0] track by $index">
     <img ng-src="{{ brick.gif }}" alt="Brick">
   </div>
 </div>
 <div class="masonry-hidden">
   <div class="brick"
-    ng-style="colStyle"
     ng-repeat="brick in bricks[0] track by $index">
     <img ng-src="{{ brick.jpg }}" alt="Brick">
   </div>
 </div>
 <div class="masonry-hidden">
   <div class="brick"
-    ng-style="colStyle"
     ng-repeat="brick in bricksDupe[0] track by $index">
     <img ng-src="{{ brick.jpg }}" alt="Brick">
   </div>

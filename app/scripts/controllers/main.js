@@ -35,11 +35,12 @@ angular.module('socialwallIiApp')
   $scope.bricks = [];
   $scope.bricksDupe = [];
   $scope.data = [];
+  $scope.colStyle = [];
   $scope.cycleCount = 0;
   $scope.newLeft = 0;
   $scope.newTop = 0;
-  $scope.colNum = 5;
-  $scope.loopTime = 3000;
+  $scope.colNum = 4;
+  $scope.loopTime = 1000;
   $scope.gifRunTime = 2000;
   $scope.container = angular.element('#masonry-wrap');
 
@@ -57,9 +58,6 @@ angular.module('socialwallIiApp')
         $scope.bricksDupe.push(data.photos);
       }
       $scope.isActive = -1;
-      $scope.loopTime = data.loopTime * 1000;
-      $scope.gifRunTime = data.gifRunTime * 1000;
-      $scope.colNum = data.colNum;
       $scope.sizeGrid();
       $scope.getNewPhotos();
     });
@@ -68,7 +66,7 @@ angular.module('socialwallIiApp')
   $scope.sizeGrid = function(){
     $scope.colNumWidth = 100 / $scope.colNum;
     $scope.winWidth = $window.innerWidth;
-    $scope.winHeight = $window.innerHeight;
+    $scope.winHeight = $window.innerHeight / 2;
     $scope.brickWidth = angular.element('.brick').width();
     $scope.brickHeight = angular.element('.brick').height();
     $scope.colStyle = {'width': $scope.colNumWidth + '%'};
@@ -78,11 +76,11 @@ angular.module('socialwallIiApp')
     $scope.newBrickWidth = angular.element('#new-brick').width();
     $scope.newBrickHeight = angular.element('#new-brick').height();
     $scope.newLeft = ($scope.winWidth / 2) - ($scope.newBrickWidth / 2) + 'px';
-    $scope.newTop = ($scope.winHeight / 2) - ($scope.newBrickHeight / 2) - 25 + 'px';
-    //$scope.newBrickStyle = {'top': $scope.newTop, 'left': $scope.newLeft};
+    $scope.newTop = ($scope.winHeight / 4) - ($scope.newBrickHeight / 4) + 'px';
+    $scope.newBrickStyle = {'top': $scope.newTop, 'left': $scope.newLeft};
 
     // Use manual pixel cause of share message...
-    $scope.newBrickStyle = {'top': '3em', 'left': $scope.newLeft};
+    // $scope.newBrickStyle = {'top': '3em', 'left': $scope.newLeft};
   };
 
   angular.element($window).bind('resize', function(){
@@ -97,8 +95,6 @@ angular.module('socialwallIiApp')
     $http.get('/db/newFeed.json').success(function(data){
       $scope.data = [];
       $scope.data.push(data.photos);
-      $scope.loopTime = data.loopTime * 1000;
-      $scope.gifRunTime = data.gifRunTime * 1000;
 
       if (data.result === 0){
         $timeout.cancel($scope.gifTimeout);
@@ -159,7 +155,7 @@ angular.module('socialwallIiApp')
             }, $scope.loopTime);
           }, $scope.gifRunTime);
         });
-      }, 100);
+      }, 1000);
     } else if ($scope.cycleCount === $scope.bricks[0].length / 2){
       $scope.cycleCount = 0;
       $scope.getPhotos(false);

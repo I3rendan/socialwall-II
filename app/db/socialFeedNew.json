@@ -7,6 +7,17 @@
       }
    },
    {
+      "type":"socialpost",
+      "dispalytime":3,
+      "data":{
+         "site":"twitter",
+         "screen_name":"jasonsmall21",
+         "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
+         "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
+         "avatar_url":"images/profile-andy.jpg"
+      }
+   },
+   {
       "type":"video",
       "displaytime":103,
       "data":{
@@ -21,7 +32,7 @@
          "screen_name":"jasonsmall21",
          "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
-         "avatar_url":"http:\/\/pbs.twimg.com\/profile_images\/631917860680429569\/gt9T6tlu_normal.jpg"
+         "avatar_url":"images/profile-andy.jpg"
       }
    },
    {
@@ -32,7 +43,7 @@
          "screen_name":"jasonsmall21",
          "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
-         "avatar_url":"http:\/\/pbs.twimg.com\/profile_images\/631917860680429569\/gt9T6tlu_normal.jpg"
+         "avatar_url":"images/profile-jerry.jpg"
       }
    },
    {
@@ -43,7 +54,7 @@
          "screen_name":"jasonsmall21",
          "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
-         "avatar_url":"http:\/\/pbs.twimg.com\/profile_images\/631917860680429569\/gt9T6tlu_normal.jpg"
+         "avatar_url":"images/profile-chris.jpg"
       }
    },
    {
@@ -54,7 +65,7 @@
          "screen_name":"jasonsmall21",
          "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
-         "avatar_url":"http:\/\/pbs.twimg.com\/profile_images\/631917860680429569\/gt9T6tlu_normal.jpg"
+         "avatar_url":"images/profile-donna.jpg"
       }
    },
    {
@@ -65,7 +76,7 @@
          "screen_name":"jasonsmall21",
          "media_url":"https:\/\/scontent.cdninstagram.com\/t51.2885-15\/e15\/11850315_724597764340323_447445659_n.jpg?ig_cache_key=MTA1NzQ4ODgwNjE3OTExMDk4Mw%3D%3D.2",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
-         "avatar_url":"http:\/\/pbs.twimg.com\/profile_images\/631917860680429569\/gt9T6tlu_normal.jpg"
+         "avatar_url":"images/profile-ann.jpg"
       }
    },
    {

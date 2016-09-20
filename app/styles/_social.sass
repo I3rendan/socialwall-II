@@ -1,9 +1,9 @@
 #social-wrap
-  height: 45vh
+  height: 50vh
   width: 100%
   position: absolute
   right: 0
-  top: 55vh
+  top: 50vh
   z-index: 1
   box-shadow: -2px 0 4px rgba(0,0,0,0.25)
   background: url('../images/subtlenet.png') $color-white
@@ -24,41 +24,47 @@
     text-align: left
     box-shadow: 0 -2px 4px rgba(0,0,0,0.15)
 
-    &.socialpost:after
-      content: ""
-      position: absolute
-      left: 0
-      top: 0
-      height: 100%
-      width: 100%
-      background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 95%)
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(80%,rgba(255,255,255,0)), color-stop(95%,rgba(255,255,255,1)))
-      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
-      background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
-      background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
-      background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
-      z-index: 2
+    // &.socialpost:after
+    //   content: ""
+    //   position: absolute
+    //   left: 0
+    //   top: 0
+    //   height: 100%
+    //   width: 100%
+    //   background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 95%)
+    //   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(80%,rgba(255,255,255,0)), color-stop(95%,rgba(255,255,255,1)))
+    //   background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+    //   background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+    //   background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+    //   background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 80%,rgba(255,255,255,1) 95%)
+    //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 )
+    //   z-index: 2
 
   .social-inner
     display: inline-block
-    height: 100%
     width: 100%
 
     &.montage
       overflow: hidden
+      height: 50vh
 
       > img
         min-height: 100%
-        min-width: 100%
-        position: relative
-        top: 0
-        left: 0
+        min-width: 100vw
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        transition: all ease $trans-speed
+
+    &.video
+      background: $color-dark
+      height: 100%
 
     &.socialpost
       padding: 1.5em 3em
       margin: 0.25em 0
-      font-size: 2em
+      font-size: 1.15em
 
       &.social-twitter
         .social-name > p
@@ -127,7 +133,7 @@
     position: absolute
     right: 0.33em
     top: 0.33em
-    font-size: 1.75em
+    font-size: 2.25em
     color: darken($color-primary-dark, 12.5%)
     z-index: 0
     text-shadow: 0 1px 0 fade-out($color-white, 0.925)
