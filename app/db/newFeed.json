@@ -1,8 +1,8 @@
 {
-   "result":"success",
+   "result":"fail",
    "photos":[
       {
-         "jpg":"ex/bib2.jpg",
+         "jpg":"ex/bib1.jpg",
          "name":"Jason Small",
          "country":"United States"
       },
@@ -12,23 +12,18 @@
          "country":"United States"
       },
       {
-         "jpg":"ex/bib2.jpg",
+         "jpg":"ex/bib3.jpg",
          "name":"Jason Small",
          "country":"United States"
       },
       {
-         "jpg":"ex/bib2.jpg",
+         "jpg":"ex/bib4.jpg",
          "name":"First Last",
          "country":"United States"
       },
       {
-         "jpg":"ex/bib2.jpg",
+         "jpg":"ex/bib5.jpg",
          "name":"Jason Small",
-         "country":"United States"
-      },
-      {
-         "jpg":"ex/bib2.jpg",
-         "name":"First Last",
          "country":"United States"
       }
    ]

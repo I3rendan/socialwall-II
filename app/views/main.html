@@ -35,23 +35,12 @@
 
 <div id="social-wrap">
 
-  <div class="social-outer" ng-init="loadPosts()">
+  <div class="social-outer {{feedPosts[0].type}}" ng-init="loadPosts()">
 
     <div id="social{{$index}}" 
-      class="social-item"
-      ng-class="feedPost.type"  
-      ng-repeat="feedPost in feedPosts" social-item>
-
-
-      <div class="social-inner montage" ng-if="feedPost.type === 'montage'">
-        <img ng-src="{{feedPost.data.url}}">
-      </div>
-
-      <div class="social-inner video" ng-if="feedPost.type === 'video'">
-        <video width="100%" height="540px">
-          <source ng-src="{{feedPost.data.url}}">
-        </video>
-      </div>
+      class="social-item {{feedPost.type}}"
+      ng-repeat="feedPost in feedPosts" 
+      social-item type="feedPost.type">
 
       <div class="social-inner socialpost social-{{feedPost.data.site}}"  ng-if="feedPost.type === 'socialpost'">
         <div class="social-img">
@@ -70,7 +59,15 @@
         </div>
       </div>
 
+      <div class="social-inner montage" ng-if="feedPost.type === 'montage'">
+        <img ng-src="{{feedPost.data.url}}">
+      </div>
 
+      <div class="social-inner video" ng-if="feedPost.type === 'video'">
+        <video width="100%" height="540px" id="socialVideo" controls muted>
+          <source ng-src="{{feedPost.data.url}}">
+        </video>
+      </div>
 
     </div>
 

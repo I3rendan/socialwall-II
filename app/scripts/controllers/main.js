@@ -13,7 +13,7 @@ angular.module('socialwallIiApp')
   return {
     restrict: 'A',
     link: function($scope, element){
-      $scope.getSocial = $timeout(function(){
+      $timeout(function(){
         $scope.feedPostsHeight.push(element.outerHeight(true));
         if ($scope.$last){
           $scope.sortSocial($scope.feedPostsHeight);
@@ -37,12 +37,15 @@ angular.module('socialwallIiApp')
   $scope.data = [];
   $scope.colStyle = [];
   $scope.cycleCount = 0;
-  $scope.newLeft = 0;
-  $scope.newTop = 0;
   $scope.colNum = 4;
   $scope.loopTime = 1000;
   $scope.gifRunTime = 2000;
   $scope.container = angular.element('#masonry-wrap');
+  $scope.currType = '';
+  $scope.prevType = '';
+  $scope.loopTimeout = '';
+  $scope.gifTimeout = '';
+  $scope.isPaused = false;
 
   $scope.getPhotos = function(isInit){
     // The offical feed url...
@@ -75,12 +78,6 @@ angular.module('socialwallIiApp')
   $scope.sizeNewBrick = function(){
     $scope.newBrickWidth = angular.element('#new-brick').width();
     $scope.newBrickHeight = angular.element('#new-brick').height();
-    $scope.newLeft = ($scope.winWidth / 2) - ($scope.newBrickWidth / 2) + 'px';
-    $scope.newTop = ($scope.winHeight / 4) - ($scope.newBrickHeight / 4) + 'px';
-    $scope.newBrickStyle = {'top': $scope.newTop, 'left': $scope.newLeft};
-
-    // Use manual pixel cause of share message...
-    // $scope.newBrickStyle = {'top': '3em', 'left': $scope.newLeft};
   };
 
   angular.element($window).bind('resize', function(){
@@ -111,62 +108,64 @@ angular.module('socialwallIiApp')
 
   $scope.swapContent = function(isNew){
 
-    $scope.isActive = getRandomArbitrary(0, $scope.bricks[0].length - 1);
-    $scope.swapItem = angular.element('#brick' + $scope.isActive);
+    if ($scope.isPaused === false){
 
-    if (isNew === true){
+      console.log('SWAP CONTENT');
+      
+      // If randomized bricks
+      // $scope.isActive = getRandomArbitrary(0, $scope.bricks[0].length - 1);
 
-      $scope.newBrick = [];
-      $scope.cycleCount = 0;
-      $scope.newBrick = [];
-      $scope.newBrick = $scope.data[0][0];
+      // If going sequentially
+      $scope.isActive = 0;
 
-      $scope.loopTimeout = $timeout(function(){
+      $scope.swapItem = angular.element('#brick' + $scope.isActive);
 
-        $scope.sizeNewBrick();
+      if (isNew === true){
 
-        $scope.newVisible = true;
-        angular.element('#new-brick').animate({opacity: 1}, 500, function(){
+        $scope.newBrick = [];
+        $scope.cycleCount = 0;
+        $scope.newBrick = [];
+        $scope.newBrick = $scope.data[0][0];
 
-          $scope.gifTimeout = $timeout(function(){
-            angular.element('#new-brick').animate({opacity: 0}, 500);
+        $scope.loopTimeout = $timeout(function(){
 
-            $scope.swapItem.animate({ opacity: 0 }, 500, function(){
-              $scope.bricks[0][$scope.isActive] = $scope.newBrick;
-              $scope.bricksDupe[0].push($scope.data[0][0]);
-              $scope.data[0].shift();
-              $scope.newBrick = [];
-              $scope.$apply();
-              $scope.swapItem.animate({ opacity: 1 }, 500);
-            });
+          $scope.sizeNewBrick();
 
-            var swapTop = $scope.swapItem.offset().top;
-            var swapLeft = $scope.swapItem.offset().left;
-            var swapWidth = $scope.swapItem.width();
-            var swapHeight = $scope.swapItem.height();
+          $scope.newVisible = true;
+          angular.element('#new-brick').animate({opacity: 1}, 500, function(){
 
-            $scope.newTop = swapTop + (swapHeight / 2) + 'px';
-            $scope.newLeft = swapLeft + (swapWidth / 2) + 'px';
-            $scope.newBrickStyle = {'top': $scope.newTop, 'left': $scope.newLeft};
-            $scope.newVisible = false;
-        
-            $scope.loopTimeout = $timeout(function(){
-              $scope.addNewLoop();
-            }, $scope.loopTime);
-          }, $scope.gifRunTime);
+            $scope.gifTimeout = $timeout(function(){
+              angular.element('#new-brick').animate({opacity: 0}, 500);
+
+              $scope.swapItem.animate({ opacity: 0 }, 500, function(){
+                $scope.bricks[0][$scope.isActive] = $scope.newBrick;
+                $scope.bricksDupe[0].push($scope.data[0][0]);
+                $scope.data[0].shift();
+                $scope.newBrick = [];
+                $scope.$apply();
+                $scope.swapItem.animate({ opacity: 1 }, 500);
+              });
+
+              $scope.newVisible = false;
+          
+              $scope.loopTimeout = $timeout(function(){
+                $scope.addNewLoop();
+              }, $scope.loopTime);
+            }, $scope.gifRunTime);
+          });
+        }, 1000);
+      } else if ($scope.cycleCount === $scope.bricks[0].length / 2){
+        $scope.cycleCount = 0;
+        $scope.getPhotos(false);
+      } else {
+        $scope.swapItem.animate({ opacity: 0 }, 500, function(){
+          $scope.newBrick = $scope.bricksDupe[0][getRandomArbitrary(0, $scope.bricksDupe[0].length - 1)];
+          $scope.bricks[0][$scope.isActive] = $scope.newBrick;
+          $scope.$apply();
+          $scope.cycleCount++;
+          $scope.swapItem.animate({ opacity: 1 }, 500);
         });
-      }, 1000);
-    } else if ($scope.cycleCount === $scope.bricks[0].length / 2){
-      $scope.cycleCount = 0;
-      $scope.getPhotos(false);
-    } else {
-      $scope.swapItem.animate({ opacity: 0 }, 500, function(){
-        $scope.newBrick = $scope.bricksDupe[0][getRandomArbitrary(0, $scope.bricksDupe[0].length - 1)];
-        $scope.bricks[0][$scope.isActive] = $scope.newBrick;
-        $scope.$apply();
-        $scope.cycleCount++;
-        $scope.swapItem.animate({ opacity: 1 }, 500);
-      });
+      }
     }
   };
 
@@ -176,6 +175,12 @@ angular.module('socialwallIiApp')
     } else {
       $scope.getNewPhotos();
     }
+  };
+
+  $scope.pauseLoop = function(){
+    $scope.isPaused = true;
+    $timeout.cancel($scope.gifTimeout);
+    $timeout.cancel($scope.loopTimeout);
   };
 
   $scope.addNewLoop = function(){
@@ -191,11 +196,23 @@ angular.module('socialwallIiApp')
   /*---------- Front Socialmap ----------*/
 
   $scope.postStatus = 'init';
-  $scope.delaySlide = 3600;
+  $scope.delaySlide = 3000;
   $scope.animationSpeed = 1200;
-  $scope.minPosts = 12;
+  $scope.minPosts = 3;
+  $scope.currPost = 0;
   $scope.feedPosts = [];
   $scope.feedPostsHeight = [];
+
+  $scope.shuffleArray = function(array) {
+    var m = array.length, t, i;
+    while (m) {
+      i = Math.floor(Math.random() * m--);
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
+  };
 
   $scope.updatePosts = function(data){
     $scope.feedPostsHeight = [];
@@ -209,23 +226,23 @@ angular.module('socialwallIiApp')
 
         if ($scope.postStatus === 'init') {
           $scope.postStatus = 'running';
+          $scope.delaySlide = data[0].displaytime * 1000;
           $scope.updatePosts(data);
-        }
-        else if (data.length < $scope.minPosts){
+        } else if (data.length < $scope.minPosts){
           if (String($scope.feedPosts) !== String(data) && $scope.postStatus !== 'delayed'){
-            $scope.feedPosts.push.apply($scope.feedPosts, data.feed);
+            $scope.feedPosts.push.apply($scope.feedPosts, data);
             $scope.postStatus = 'delayed';
           } else {
             $timeout(function(){
               $scope.loadPosts();
-            }, $scope.delaySlide * 3);
+            }, 5000);
           }
         } else {
           if (data.playListOrder === 'random'){
-            $scope.feedPosts.push.apply($scope.feedPosts, $scope.shuffleArray(data.feed));
+            $scope.feedPosts.push.apply($scope.feedPosts, $scope.shuffleArray(data));
             $scope.postStatus = 'running';
           } else {
-            $scope.feedPosts.push.apply($scope.feedPosts, data.feed);
+            $scope.feedPosts.push.apply($scope.feedPosts, data);
             $scope.postStatus = 'running';
           }
         }
@@ -236,22 +253,61 @@ angular.module('socialwallIiApp')
   };
 
   $scope.removePost = function(){
-    angular.element('#social0').slideUp($scope.animationSpeed, function(){
-      $scope.feedPosts.shift();
-      $scope.feedPostsHeight.shift();
-      $scope.$apply();
+    var findCurr = $scope.findCurrType();
+    if (findCurr === 'social'){
+      angular.element('#social0').slideUp($scope.animationSpeed, function(){
+        $scope.shiftSocial();
+      });
+    } else {
+      angular.element('#social0').animate({ opacity: 0 }, $scope.animationSpeed, function(){
+        $scope.shiftSocial();
+      });
+    }
+  };
 
-      if ($scope.feedPosts.length <= $scope.minPosts){
-        $scope.loadPosts();
-      } else {
-        $scope.sortSocial($scope.feedPostsHeight);
-      }
-    });
+  $scope.shiftSocial = function(){
+
+    $scope.feedPosts.shift();
+    $scope.feedPostsHeight.shift();
+
+    $scope.$apply();
+
+    $scope.prevType = $scope.currType;
+    $scope.currType = $scope.findCurrType();
+
+    $scope.delaySlide = $scope.feedPosts[0].displaytime * 1000;
+
+    if ($scope.prevType === 'video'){
+      $scope.isPaused = false;
+      $scope.swapContent(true);
+    }
+    if ($scope.currType === 'video'){
+      $scope.pauseLoop();
+      angular.element('#socialVideo').get(0).play();
+    }
+    if ($scope.feedPosts.length <= $scope.minPosts){
+      $scope.loadPosts();
+    } else {
+      $scope.sortSocial($scope.feedPostsHeight);
+    }
+  };
+
+  $scope.findCurrType = function(){
+    var findClass = angular.element('#social0').attr('class');
+    var isImg = findClass.indexOf('montage');
+    var isVid = findClass.indexOf('video');
+    if (isImg !== -1){
+      return 'image';
+    } else if (isVid !== -1){
+      return 'video';
+    } else {
+      return 'social';
+    }
   };
 
   $scope.sortSocial = function(data){
     var findMin = 0;
-    var findVH = $window.innerHeight;
+    var findVH = $window.innerHeight / 2;
 
     for (var i = 0; i < data.length; i++) {
       findMin += data[i];
@@ -268,7 +324,6 @@ angular.module('socialwallIiApp')
     }
     if (findMin < findVH){
       $scope.minPosts = Math.round(findVH / findMin) * i;
-
       $timeout(function(){
         $scope.loadPosts();
       }, $scope.delaySlide);
@@ -278,6 +333,6 @@ angular.module('socialwallIiApp')
   $scope.delaySocialRemove = function(){
     $timeout(function(){
       $scope.removePost();
-    }, $scope.delaySlide * 1.33);
+    }, $scope.delaySlide);
   };
 });

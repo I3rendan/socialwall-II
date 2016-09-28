@@ -3,12 +3,13 @@
   height: 50vh
   width: 100%
   padding: 0.5em
-  top: 0
+  top: 50vh
   left: 0
   opacity: 1
   transition: opacity ease $trans-speed, filter ease $trans-speed
   filter: none
   display: block
+  overflow: hidden
 
   &.new-item
     opacity: 0.15
@@ -27,15 +28,18 @@
   position: absolute
   width: 90vw
   margin: auto
-  top: 0
+  top: calc(50vh + 2em)
   left: 0
+  right: 0
   z-index: 1
-  transition: top ease $trans-speed, left ease $trans-speed, transform ease $trans-speed
-  transform: scale(0,0)
-  transform-origin: top left
+  transition: transform ease $trans-speed
+  transform: scale(0.75,0.75)
+  transform-origin: center center
+  opacity: 0
 
   &.visible
     transform: scale(1,1)
+    opacity: 1
 
   img
     width: 100%
@@ -49,6 +53,7 @@
   display: inline-block
   transition: width ease $trans-speed
   width: auto
+  opacity: 0 !important
 
   span
     width: 100%

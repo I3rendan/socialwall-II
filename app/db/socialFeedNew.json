@@ -1,14 +1,14 @@
 [
    {
       "type":"montage",
-      "displaytime":5,
+      "displaytime":1,
       "data":{
          "url":"ex/1.jpg"
       }
    },
    {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":1,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -19,14 +19,14 @@
    },
    {
       "type":"video",
-      "displaytime":103,
+      "displaytime":3,
       "data":{
          "url":"ex/demo.mp4"
       }
    },
    {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -37,7 +37,7 @@
    },
    {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -47,8 +47,15 @@
       }
    },
    {
+      "type":"montage",
+      "displaytime":5,
+      "data":{
+         "url":"ex/5.jpg"
+      }
+   },
+   {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -59,7 +66,7 @@
    },
    {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -70,7 +77,7 @@
    },
    {
       "type":"socialpost",
-      "dispalytime":3,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -81,7 +88,7 @@
    },
    {
       "type":"video",
-      "displaytime":103,
+      "displaytime":63,
       "data":{
          "url":"ex/demo.mp4"
       }
