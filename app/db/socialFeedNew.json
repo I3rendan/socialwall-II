@@ -1,14 +1,14 @@
 [
    {
       "type":"montage",
-      "displaytime":1,
+      "displaytime":5,
       "data":{
          "url":"ex/1.jpg"
       }
    },
    {
       "type":"socialpost",
-      "displaytime":1,
+      "displaytime":3,
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
@@ -19,7 +19,7 @@
    },
    {
       "type":"video",
-      "displaytime":3,
+      "displaytime":63,
       "data":{
          "url":"ex/demo.mp4"
       }
