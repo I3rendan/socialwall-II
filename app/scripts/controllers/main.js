@@ -39,7 +39,7 @@ angular.module('socialwallIiApp')
   $scope.cycleCount = 0;
   $scope.colNum = 4;
   $scope.loopTime = 1000;
-  $scope.gifRunTime = 2000;
+  $scope.gifRunTime = 5000;
   $scope.container = angular.element('#masonry-wrap');
   $scope.currType = '';
   $scope.prevType = '';
@@ -110,8 +110,6 @@ angular.module('socialwallIiApp')
 
     if ($scope.isPaused === false){
 
-      console.log('SWAP CONTENT');
-      
       // If randomized bricks
       // $scope.isActive = getRandomArbitrary(0, $scope.bricks[0].length - 1);
 
@@ -153,7 +151,7 @@ angular.module('socialwallIiApp')
               }, $scope.loopTime);
             }, $scope.gifRunTime);
           });
-        }, 1000);
+        }, 500);
       } else if ($scope.cycleCount === $scope.bricks[0].length / 2){
         $scope.cycleCount = 0;
         $scope.getPhotos(false);
@@ -197,7 +195,7 @@ angular.module('socialwallIiApp')
 
   $scope.postStatus = 'init';
   $scope.delaySlide = 3000;
-  $scope.animationSpeed = 1200;
+  $scope.animationSpeed = 1000;
   $scope.minPosts = 3;
   $scope.currPost = 0;
   $scope.feedPosts = [];
@@ -283,6 +281,10 @@ angular.module('socialwallIiApp')
     }
     if ($scope.currType === 'video'){
       $scope.pauseLoop();
+
+      // Kill this
+      angular.element('#socialVideo').prop('muted', true);
+
       angular.element('#socialVideo').get(0).play();
     }
     if ($scope.feedPosts.length <= $scope.minPosts){

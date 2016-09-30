@@ -19,7 +19,7 @@
    },
    {
       "type":"video",
-      "displaytime":63,
+      "displaytime":5,
       "data":{
          "url":"ex/demo.mp4"
       }
