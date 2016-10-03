@@ -52,7 +52,7 @@
           </p>
         </div>
         <div class="social-post">
-          <p>{{feedPost.data.title}}</p>
+          <p ng-bind-html="feedPost.data.title"></p>
         </div>
         <div class="social-icon">
           <i class="icon icon-{{feedPost.data.site}}"></i>
