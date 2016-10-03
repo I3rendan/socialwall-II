@@ -281,10 +281,6 @@ angular.module('socialwallIiApp')
     }
     if ($scope.currType === 'video'){
       $scope.pauseLoop();
-
-      // Kill this
-      angular.element('#socialVideo').prop('muted', true);
-
       angular.element('#socialVideo').get(0).play();
     }
     if ($scope.feedPosts.length <= $scope.minPosts){
