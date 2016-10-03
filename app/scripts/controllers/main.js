@@ -52,7 +52,7 @@ angular.module('socialwallIiApp')
     //$http.get('/app/montagephotos/cfp').success(function(data){
 
     // Demo feed url
-    $http.get('/db/feed.json').success(function(data){
+    $http.get('db/feed.json').success(function(data){
       if (isInit === true){
         $scope.bricks.push(data.photos);
         $scope.bricksDupe = angular.copy($scope.bricks);
@@ -89,7 +89,7 @@ angular.module('socialwallIiApp')
     //$http.get('/app/montagephotosnew/cfp').success(function(data){
 
     // Demo feed url
-    $http.get('/db/newFeed.json').success(function(data){
+    $http.get('db/newFeed.json').success(function(data){
       $scope.data = [];
       $scope.data.push(data.photos);
 

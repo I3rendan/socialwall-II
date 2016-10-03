@@ -17,10 +17,6 @@
     "angular-scenario": "1.2.15"
   },
   "overrides": {
-    "masonry": {
-      "main": ["./dist/masonry.pkgd.min.js"],
-      "dependencies": {}
-    },
     "outlayer": {
       "main": [
         "item.js",
