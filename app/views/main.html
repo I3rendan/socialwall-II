@@ -53,6 +53,9 @@
         </div>
         <div class="social-post">
           <p ng-bind-html="feedPost.data.title"></p>
+          <span class="social-media" ng-if="feedPost.data.media_url">
+            <img ng-src="{{feedPost.data.media_url}}">
+          </span>
         </div>
         <div class="social-icon">
           <i class="icon icon-{{feedPost.data.site}}"></i>
