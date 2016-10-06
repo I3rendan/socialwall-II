@@ -23,10 +23,10 @@
   .social-item
     width: 100%
     color: $color-dark * 3
-    opacity: 1
     position: relative
     display: block
     text-align: left
+    transition: opacity ease $trans-speed
 
   #social0
     .social-inner
@@ -51,7 +51,7 @@
       height: 50vh
       width: 100%
       z-index: 4
-      transition: all ease $trans-speed
+      transition: opacity ease $trans-speed
 
     &.montage
       > img

@@ -1,29 +1,20 @@
 'use strict';
 
 angular.module('socialwallIiApp')
-.directive('masonryGrid', function(){
+
+.directive('socialItem', function(){
   return {
-    link: function(){
+    restrict: '',
+    scope: {
+      'type': '='
+    },
+    controller: function(){
 
     }
   };
 })
 
-.directive('socialItem', function($timeout){
-  return {
-    restrict: 'A',
-    link: function($scope, element){
-      $timeout(function(){
-        $scope.feedPostsHeight.push(element.outerHeight(true));
-        if ($scope.$last){
-          $scope.sortSocial($scope.feedPostsHeight);
-        }
-      });
-    }
-  };
-})
-
-.controller('MainCtrl', function($scope, $http, $timeout, $window){
+.controller('MainCtrl', function($scope, $http, $timeout ){
   $scope.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
@@ -33,145 +24,72 @@ angular.module('socialwallIiApp')
   /*---------- From Socialwall ----------*/
 
   $scope.bricks = [];
-  $scope.bricksDupe = [];
-  $scope.data = [];
-  $scope.colStyle = [];
-  $scope.cycleCount = 0;
-  $scope.colNum = 4;
   $scope.loopTime = 1000;
-  $scope.gifRunTime = 5000;
-  $scope.container = angular.element('#masonry-wrap');
+  $scope.gifTime = 5000;
   $scope.currType = '';
   $scope.prevType = '';
   $scope.loopTimeout = '';
   $scope.gifTimeout = '';
+  $scope.brickHighlight = '';
   $scope.isPaused = false;
+  $scope.highVisible = false;
+  $scope.activeBrick = 0;
+  $scope.activeType = 'random';
 
-  $scope.getPhotos = function(isInit){
+  $scope.getPhotos = function(){
     // The offical feed url...
     //$http.get('/app/montagephotos/cfp').success(function(data){
 
     // Demo feed url
     $http.get('db/feed.json').success(function(data){
-      if (isInit === true){
+      if (data.result === 'success'){
         $scope.bricks.push(data.photos);
-        $scope.bricksDupe = angular.copy($scope.bricks);
+        $scope.getNewPhotos();
       } else {
-        $scope.bricksDupe = [];
-        $scope.bricksDupe.push(data.photos);
+        $scope.loopTimeout = $timeout(function(){
+          $scope.getPhotos();
+        }, $scope.loopTime);
       }
-      $scope.isActive = -1;
-      $scope.sizeGrid();
-      $scope.getNewPhotos();
     });
   };
 
-  $scope.sizeGrid = function(){
-    $scope.colNumWidth = 100 / $scope.colNum;
-    $scope.winWidth = $window.innerWidth;
-    $scope.winHeight = $window.innerHeight / 2;
-    $scope.brickWidth = angular.element('.brick').width();
-    $scope.brickHeight = angular.element('.brick').height();
-    $scope.colStyle = {'width': $scope.colNumWidth + '%'};
-  };
-
-  $scope.sizeNewBrick = function(){
-    $scope.newBrickWidth = angular.element('#new-brick').width();
-    $scope.newBrickHeight = angular.element('#new-brick').height();
-  };
-
-  angular.element($window).bind('resize', function(){
-    $scope.sizeGrid();
-  });
-
   $scope.getNewPhotos = function(){
+    $timeout.cancel($scope.gifTimeout);
+    $timeout.cancel($scope.loopTimeout);
+    $scope.highVisible = false;
+
     // The offical feed url...
     //$http.get('/app/montagephotosnew/cfp').success(function(data){
 
     // Demo feed url
     $http.get('db/newFeed.json').success(function(data){
-      $scope.data = [];
-      $scope.data.push(data.photos);
-
-      if (data.result === 0){
-        $timeout.cancel($scope.gifTimeout);
-        $timeout.cancel($scope.loopTimeout);
-        $scope.swapContent(false);
-        $scope.loopTimeout = $timeout(function(){
-          $scope.getNewPhotos();
-        }, $scope.loopTime);
-      } else {
-        $scope.addNewLoop();
-      }
+      $scope.highVisible = false;
+      $scope.loopTimeout = $timeout(function(){
+        if (data.result === 'success'){
+          if ($scope.activeType === 'random'){
+            $scope.activeBrick = $scope.bricks[0].length - 1;
+          }
+          $scope.activeType = 'sequential';
+          $scope.bricks = [$scope.bricks[0].concat(data.photos)];
+        }
+        if ($scope.activeType === 'sequential' && $scope.activeBrick < $scope.bricks[0].length - 1){
+          $scope.activeBrick++;
+        } else {
+          $scope.activeType = 'random';
+          $scope.activeBrick =  $scope.getRandomArbitrary(0, $scope.bricks[0].length - 1);
+        }
+        $scope.swapContent();
+      }, $scope.loopTime);
     });
   };
 
-  $scope.swapContent = function(isNew){
-
+  $scope.swapContent = function(){
     if ($scope.isPaused === false){
-
-      // If randomized bricks
-      // $scope.isActive = getRandomArbitrary(0, $scope.bricks[0].length - 1);
-
-      // If going sequentially
-      $scope.isActive = 0;
-
-      $scope.swapItem = angular.element('#brick' + $scope.isActive);
-
-      if (isNew === true){
-
-        $scope.newBrick = [];
-        $scope.cycleCount = 0;
-        $scope.newBrick = [];
-        $scope.newBrick = $scope.data[0][0];
-
-        $scope.loopTimeout = $timeout(function(){
-
-          $scope.sizeNewBrick();
-
-          $scope.newVisible = true;
-          angular.element('#new-brick').animate({opacity: 1}, 500, function(){
-
-            $scope.gifTimeout = $timeout(function(){
-              angular.element('#new-brick').animate({opacity: 0}, 500);
-
-              $scope.swapItem.animate({ opacity: 0 }, 500, function(){
-                $scope.bricks[0][$scope.isActive] = $scope.newBrick;
-                $scope.bricksDupe[0].push($scope.data[0][0]);
-                $scope.data[0].shift();
-                $scope.newBrick = [];
-                $scope.$apply();
-                $scope.swapItem.animate({ opacity: 1 }, 500);
-              });
-
-              $scope.newVisible = false;
-          
-              $scope.loopTimeout = $timeout(function(){
-                $scope.addNewLoop();
-              }, $scope.loopTime);
-            }, $scope.gifRunTime);
-          });
-        }, 500);
-      } else if ($scope.cycleCount === $scope.bricks[0].length / 2){
-        $scope.cycleCount = 0;
-        $scope.getPhotos(false);
-      } else {
-        $scope.swapItem.animate({ opacity: 0 }, 500, function(){
-          $scope.newBrick = $scope.bricksDupe[0][getRandomArbitrary(0, $scope.bricksDupe[0].length - 1)];
-          $scope.bricks[0][$scope.isActive] = $scope.newBrick;
-          $scope.$apply();
-          $scope.cycleCount++;
-          $scope.swapItem.animate({ opacity: 1 }, 500);
-        });
-      }
-    }
-  };
-
-  $scope.addNew = function(){
-    if ($scope.data[0].length > 0){
-      $scope.swapContent(true);
-    } else {
-      $scope.getNewPhotos();
+      $scope.brickHighlight = $scope.bricks[0][$scope.activeBrick];
+      $scope.highVisible = true;
+      $scope.gifTimeout = $timeout(function(){
+        $scope.getNewPhotos();
+      }, $scope.gifTime);
     }
   };
 
@@ -184,114 +102,109 @@ angular.module('socialwallIiApp')
   $scope.addNewLoop = function(){
     $timeout.cancel($scope.gifTimeout);
     $timeout.cancel($scope.loopTimeout);
-    $scope.addNew();
+    $scope.getNewPhotos();
   };
 
-  function getRandomArbitrary(min, max){
+  $scope.getRandomArbitrary = function(min, max){
     return Math.round(Math.random() * (max - min) + min);
-  }
+  };
+
 
   /*---------- Front Socialmap ----------*/
 
-  $scope.postStatus = 'init';
-  $scope.delaySlide = 3000;
-  $scope.animationSpeed = 1000;
-  $scope.minPosts = 3;
+  $scope.postTime = 5000;
+  $scope.postLoopTime = 1000;
+  $scope.postTimeout = '';
+  $scope.postLoopTimeout = '';
+  $scope.minPosts = 10;
   $scope.currPost = 0;
+  $scope.initRun = true;
   $scope.feedPosts = [];
-  $scope.feedPostsHeight = [];
 
-  $scope.shuffleArray = function(array) {
-    var m = array.length, t, i;
-    while (m) {
-      i = Math.floor(Math.random() * m--);
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
-    }
-    return array;
-  };
-
-  $scope.updatePosts = function(data){
-    $scope.feedPostsHeight = [];
-    $scope.feedPosts = data;
-  };
-
-  $scope.loadPosts = function() {
+  $scope.getPosts = function(){
     //$http({method: 'GET', url: '/app/socialfeed/' + $scope.minPosts}).
-    $http({method: 'GET', url: 'db/socialFeedNew.json'}).
-      success(function(data) {
-
-        if ($scope.postStatus === 'init') {
-          $scope.postStatus = 'running';
-          $scope.delaySlide = data[0].displaytime * 1000;
-          $scope.updatePosts(data);
-        } else if (data.length < $scope.minPosts){
-          if (String($scope.feedPosts) !== String(data) && $scope.postStatus !== 'delayed'){
-            $scope.feedPosts.push.apply($scope.feedPosts, data);
-            $scope.postStatus = 'delayed';
-          } else {
-            $timeout(function(){
-              $scope.loadPosts();
-            }, 5000);
-          }
+    $http({method: 'GET', url: 'db/socialFeedNew.json'}).success(function(data){
+      if (data.length !== 0){
+        if ($scope.initRun === true){
+          $scope.feedPosts.push(data);
+          $scope.initRun = false;
         } else {
-          if (data.playListOrder === 'random'){
-            $scope.feedPosts.push.apply($scope.feedPosts, $scope.shuffleArray(data));
-            $scope.postStatus = 'running';
-          } else {
-            $scope.feedPosts.push.apply($scope.feedPosts, data);
-            $scope.postStatus = 'running';
-          }
+          $scope.feedPosts = [$scope.feedPosts[0].concat(data)];
         }
-      }).
-      error(function(data, status) {
-        console.log(status + ' - Could not load posts');
-      });
+        $scope.shiftPost();
+      } else {
+        $timeout(function(){
+          $scope.getPosts();
+        }, 5000);
+      }
+    }).
+    error(function(data, status){
+      console.log(status + ' - Could not load posts');
+    });
   };
 
-  $scope.removePost = function(){
-    var findCurr = $scope.findCurrType();
-    if (findCurr === 'social'){
-      angular.element('#social0').slideUp($scope.animationSpeed, function(){
-        $scope.shiftSocial();
-      });
-    } else {
-      angular.element('#social0').animate({ opacity: 0 }, $scope.animationSpeed, function(){
-        $scope.shiftSocial();
-      });
-    }
+  $scope.shiftPost = function(){
+    $scope.postTime = $scope.feedPosts[0][0].displaytime * 1000;
+    $scope.postTimeout = $timeout(function(){
+      if ($scope.currType === 'social'){
+        angular.element('#social0 .social-inner').slideUp($scope.postLoopTime, function(){
+          $scope.nextPost();
+        });
+      } else {
+        angular.element('#social0 .social-inner').animate({ opacity: 0 }, $scope.postLoopTime, function(){
+          $scope.nextPost();
+        });
+      }
+    }, $scope.postTime);
   };
 
-  $scope.shiftSocial = function(){
+  $scope.nextPost = function(){
 
-    $scope.feedPosts.shift();
-    $scope.feedPostsHeight.shift();
+    $scope.postLoopTimeout = $timeout(function(){
+      $scope.feedPosts[0].shift();
+      $scope.$apply();
+      $scope.prevType = $scope.currType;
+      $scope.currType = $scope.findCurrType();
 
-    $scope.$apply();
+      
 
-    $scope.prevType = $scope.currType;
-    $scope.currType = $scope.findCurrType();
 
-    $scope.delaySlide = $scope.feedPosts[0].displaytime * 1000;
 
-    if ($scope.prevType === 'video'){
-      $scope.isPaused = false;
-      $scope.swapContent(true);
-    }
-    if ($scope.currType === 'video'){
-      $scope.pauseLoop();
-      angular.element('#socialVideo').get(0).play();
-    }
-    if ($scope.feedPosts.length <= $scope.minPosts){
-      $scope.loadPosts();
-    } else {
-      $scope.sortSocial($scope.feedPostsHeight);
-    }
+
+      if ($scope.prevType === 'video' && $scope.currType !== 'video'){
+        $scope.isPaused = false;
+        $scope.swapContent();
+      }
+      if ($scope.currType === 'video'){
+        $scope.pauseLoop();
+
+
+        angular.element('#socialVideo0').get(0).play();
+        angular.element('#socialVideo0').prop('muted', true);
+
+
+      }
+
+      if ($scope.feedPosts[0].length < $scope.minPosts){
+        $scope.getPosts();
+      } else {
+        $scope.shiftPost();
+      }
+
+
+
+
+
+
+
+    }, $scope.postLoopTime);
   };
 
   $scope.findCurrType = function(){
     var findClass = angular.element('#social0').attr('class');
+
+    console.log(findClass);
+
     var isImg = findClass.indexOf('montage');
     var isVid = findClass.indexOf('video');
     if (isImg !== -1){
@@ -301,36 +214,5 @@ angular.module('socialwallIiApp')
     } else {
       return 'social';
     }
-  };
-
-  $scope.sortSocial = function(data){
-    var findMin = 0;
-    var findVH = $window.innerHeight / 2;
-
-    for (var i = 0; i < data.length; i++) {
-      findMin += data[i];
-      if (findMin >= findVH){
-        $scope.minPosts = Math.round(i) * 1.5;
-
-        if ($scope.postStatus === 'delayed'){
-          $scope.minPosts = Math.round(i);
-        }
-
-        i = data.length;
-        $scope.delaySocialRemove();
-      }
-    }
-    if (findMin < findVH){
-      $scope.minPosts = Math.round(findVH / findMin) * i;
-      $timeout(function(){
-        $scope.loadPosts();
-      }, $scope.delaySlide);
-    }
-  };
-
-  $scope.delaySocialRemove = function(){
-    $timeout(function(){
-      $scope.removePost();
-    }, $scope.delaySlide);
   };
 });

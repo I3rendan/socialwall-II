@@ -5,8 +5,7 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute',
-    'wu.masonry'
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider

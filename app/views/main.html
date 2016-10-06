@@ -1,48 +1,31 @@
-<div id="masonry-wrap"
-  ng-class="{ 'new-item': newVisible === true }"
-  ng-init="getPhotos(true)" 
-  masonry-grid>
-  <div id="brick{{ $index }}" 
+<div id="brick-wrap"
+  class="bricks-wrap"
+  ng-init="getPhotos()">
+
+  <div id="brick{{$index}}" 
     class="brick"
-    ng-style="colStyle"
     ng-repeat="brick in bricks[0] track by $index">
     <img ng-src="{{ brick.jpg }}" alt="Brick">
   </div>
+
 </div>
-<div id="new-brick"
-  ng-class="{'visible': newVisible}"
-  ng-style="newBrickStyle">
-  <img id="new-brick-img" ng-src="{{ newBrick.jpg }}" alt="New Brick">
-</div>
-<div class="masonry-hidden">
-  <div class="brick"
-    ng-repeat="brick in bricks[0] track by $index">
-    <img ng-src="{{ brick.gif }}" alt="Brick">
-  </div>
-</div>
-<div class="masonry-hidden">
-  <div class="brick"
-    ng-repeat="brick in bricks[0] track by $index">
-    <img ng-src="{{ brick.jpg }}" alt="Brick">
-  </div>
-</div>
-<div class="masonry-hidden">
-  <div class="brick"
-    ng-repeat="brick in bricksDupe[0] track by $index">
-    <img ng-src="{{ brick.jpg }}" alt="Brick">
-  </div>
+<div id="brick-highlight"
+  ng-class="{'visible': highVisible}">
+  <img id="brick-highlight-img" ng-src="{{ brickHighlight.jpg }}" alt="Highlight">
 </div>
 
 <div id="social-wrap">
 
-  <div class="social-outer {{feedPosts[0].type}}" ng-init="loadPosts()">
+  <div class="social-outer {{feedPosts.type}}" ng-init="getPosts()">
 
     <div id="social{{$index}}" 
       class="social-item {{feedPost.type}}"
-      ng-repeat="feedPost in feedPosts" 
-      social-item type="feedPost.type">
+      ng-repeat="feedPost in feedPosts[0] | limitTo: minPosts track by $index"
+      type="feedPost.type"
+      social-item>
 
-      <div class="social-inner socialpost social-{{feedPost.data.site}}"  ng-if="feedPost.type === 'socialpost'">
+      <div class="social-inner socialpost social-{{feedPost.data.site}}"  
+        ng-if="feedPost.type === 'socialpost'">
         <div class="social-img">
           <img ng-src="{{feedPost.data.avatar_url}}">
         </div>
@@ -62,13 +45,15 @@
         </div>
       </div>
 
-      <div class="social-inner montage" ng-if="feedPost.type === 'montage'">
-        <!-- <img ng-src="{{feedPost.data.url}}"> -->
-        <iframe src="http://localhost:30113" height="100%" width="100%" frameborder="0"></iframe>
+      <div class="social-inner montage" 
+        ng-if="feedPost.type === 'montage'">
+        <img ng-src="{{feedPost.data.url}}">
+        <!-- <iframe src="http://localhost:30113" height="100%" width="100%" frameborder="0"></iframe> -->
       </div>
 
-      <div class="social-inner video" ng-if="feedPost.type === 'video'">
-        <video width="100%" height="540px" id="socialVideo">
+      <div class="social-inner video" 
+        ng-if="feedPost.type === 'video'">
+        <video width="100%" height="540px" id="socialVideo{{$index}}">
           <source ng-src="{{feedPost.data.url}}">
         </video>
       </div>

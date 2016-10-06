@@ -12,7 +12,7 @@
       "data":{
          "site":"twitter",
          "screen_name":"jasonsmall21",
-         "media_url":"ex/1.jpg",
+         "media_url":"ex/9.jpg",
          "title":"Hiked up to the to get a couple shots this morning. #dji #gopro #hero4 #phantom2 #dronebois #arealphotography",
          "avatar_url":"images/profile-andy.jpg"
       }
@@ -88,7 +88,7 @@
    },
    {
       "type":"video",
-      "displaytime":63,
+      "displaytime":6,
       "data":{
          "url":"ex/demo.mp4"
       }
