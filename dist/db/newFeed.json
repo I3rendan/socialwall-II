@@ -1,0 +1,31 @@
+{
+   "result":"success",
+   "displaytime": "8",
+   "photos":[
+      {
+         "jpg":"ex/bib1.jpg",
+         "name":"Jason Small",
+         "country":"United States"
+      },
+      {
+         "jpg":"ex/bib2.jpg",
+         "name":"First Last",
+         "country":"United States"
+      },
+      {
+         "jpg":"ex/bib3.jpg",
+         "name":"Jason Small",
+         "country":"United States"
+      },
+      {
+         "jpg":"ex/bib4.jpg",
+         "name":"First Last",
+         "country":"United States"
+      },
+      {
+         "jpg":"ex/bib5.jpg",
+         "name":"Jason Small",
+         "country":"United States"
+      }
+   ]
+}
