@@ -129,7 +129,6 @@ angular.module('socialwallIiApp')
   $scope.postTimeout = '';
   $scope.postLoopTimeout = '';
   $scope.minPosts = 10;
-  $scope.currPost = 0;
   $scope.initRun = true;
   $scope.feedPosts = [];
 
