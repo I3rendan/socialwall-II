@@ -1,5 +1,6 @@
 {
    "result":"success",
+   "displaytime": "8",
    "photos":[
       {
          "jpg":"ex/bib1.jpg",
