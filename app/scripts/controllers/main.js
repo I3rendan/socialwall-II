@@ -211,7 +211,7 @@ angular.module('socialwallIiApp')
       $scope.swapContent();
     }
     if ($scope.currType === 'video'){
-      $scope.playVideo(); 
+      $scope.playVideo();
     }
     if ($scope.feedPosts[0].length < $scope.minPosts){
       $scope.getPosts();
