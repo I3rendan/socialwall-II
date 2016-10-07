@@ -30,9 +30,7 @@
           <img ng-src="{{feedPost.data.avatar_url}}">
         </div>
         <div class="social-name">
-          <p>
-            {{feedPost.data.screen_name}}
-          </p>
+          <p>{{feedPost.data.screen_name}}</p>
         </div>
         <div class="social-post">
           <p ng-bind-html="feedPost.data.title"></p>
@@ -47,8 +45,8 @@
 
       <div class="social-inner montage" 
         ng-if="feedPost.type === 'montage'">
-        <img ng-src="{{feedPost.data.url}}">
-        <!-- <iframe src="http://localhost:30113" height="100%" width="100%" frameborder="0"></iframe> -->
+        <!-- <img ng-src="{{feedPost.data.url}}"> -->
+        <iframe src="http://localhost:30113" height="100%" width="100%" frameborder="0"></iframe>
       </div>
 
       <div class="social-inner video" 
