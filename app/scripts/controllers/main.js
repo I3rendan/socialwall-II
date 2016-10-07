@@ -37,6 +37,7 @@ angular.module('socialwallIiApp')
   $scope.activeType = 'random';
 
   $scope.getPhotos = function(){
+
     // Demo feed url -- please update
     $http.get('db/feed.json').success(function(data){
       if (data.result === 'success'){
@@ -63,10 +64,7 @@ angular.module('socialwallIiApp')
     $timeout.cancel($scope.loopTimeout);
     $scope.highVisible = false;
 
-    // The offical feed url...
-    //$http.get('/app/montagephotosnew/cfp').success(function(data){
-
-    // Demo feed url
+    // Demo feed url -- please update
     $http.get('db/newFeed.json').success(function(data){
       $scope.highVisible = false;
       $scope.loopTimeout = $timeout(function(){
@@ -127,29 +125,31 @@ angular.module('socialwallIiApp')
   /*---------- Front Socialmap ----------*/
 
   $scope.postTime = 5000;
-  $scope.postLoopTime = 750;
+  $scope.postLoopTime = 1000;
   $scope.postTimeout = '';
   $scope.postLoopTimeout = '';
-  $scope.minPosts = 5;
+  $scope.minPosts = 10;
   $scope.currPost = 0;
   $scope.initRun = true;
   $scope.feedPosts = [];
 
   $scope.getPosts = function(){
+
     // Demo feed url -- please update
-    $http({method: 'GET', url: 'db/socialFeedNew.json'}).success(function(data){
+    $http({method: 'GET', url: 'db/socialFeed.json'}).success(function(data){
       if (data.length !== 0){
         if ($scope.initRun === true){
           $scope.feedPosts.push(data);
           $scope.currType = data[0].type;
           $scope.postTime = data[0].displaytime * 1000;
           $scope.initRun = false;
+          if ($scope.currType === 'video'){
+            $scope.playVideo();
+          }
         } else {
           $scope.feedPosts = [$scope.feedPosts[0].concat(data)];
         }
-
         $scope.shiftPost();
-
       } else {
         console.log('No post data');
         $timeout(function(){
@@ -191,6 +191,13 @@ angular.module('socialwallIiApp')
     }
   };
 
+  $scope.playVideo = function(){
+    $scope.pauseLoop();
+    $timeout(function(){
+      angular.element('#socialVideo0').get(0).play();
+    }, $scope.postLoopTime);
+  };
+
   $scope.nextPost = function(){
     $scope.feedPosts[0].shift();
     $scope.$apply();
@@ -204,11 +211,8 @@ angular.module('socialwallIiApp')
       $scope.swapContent();
     }
     if ($scope.currType === 'video'){
-      $scope.pauseLoop();
-      angular.element('#socialVideo0').get(0).play();
-      angular.element('#socialVideo0').prop('muted', true);
+      $scope.playVideo(); 
     }
-
     if ($scope.feedPosts[0].length < $scope.minPosts){
       $scope.getPosts();
     } else {
