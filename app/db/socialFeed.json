@@ -1,12 +1,5 @@
 [
    {
-      "type":"video",
-      "displaytime":5,
-      "data":{
-         "url":"ex/demo.mp4"
-      }
-   },
-   {
       "type":"montage",
       "displaytime":1,
       "data":{
@@ -25,10 +18,24 @@
       }
    },
    {
+      "type":"montage",
+      "displaytime":5,
+      "data":{
+         "url":"ex/5.jpg"
+      }
+   },
+   {
       "type":"video",
       "displaytime":5,
       "data":{
          "url":"ex/demo.mp4"
+      }
+   },
+   {
+      "type":"montage",
+      "displaytime":5,
+      "data":{
+         "url":"ex/5.jpg"
       }
    },
    {

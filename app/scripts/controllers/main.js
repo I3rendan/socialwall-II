@@ -21,7 +21,7 @@ angular.module('socialwallIiApp')
     'Karma'
   ];
 
-  /*---------- From Socialwall ----------*/
+  /*---------- Photo Feed ----------*/
 
   $scope.bricks = [];
   $scope.loopTime = 1000;
@@ -122,7 +122,7 @@ angular.module('socialwallIiApp')
   };
 
 
-  /*---------- Front Socialmap ----------*/
+  /*---------- Social Feed ----------*/
 
   $scope.postTime = 5000;
   $scope.postLoopTime = 1000;
@@ -176,6 +176,18 @@ angular.module('socialwallIiApp')
         
         });
       }, $scope.postLoopTime);
+    } else if ($scope.currType === 'montage'){
+      $scope.postLoopTimeout = $timeout(function(){
+        angular.element('#montage-master .social-inner').animate({opacity: 1}, $scope.postLoopTime, function(){
+          
+          $scope.postTimeout = $timeout(function(){
+            angular.element('#montage-master .social-inner').animate({opacity: 0}, $scope.postLoopTime, function(){
+              $scope.nextPost();
+            });
+          }, $scope.postTime);
+
+        });
+      }, $scope.postLoopTime);
     } else {
       $scope.postLoopTimeout = $timeout(function(){
         angular.element('#social0 .social-inner').animate({opacity: 1}, $scope.postLoopTime, function(){
@@ -222,10 +234,10 @@ angular.module('socialwallIiApp')
 
   $scope.findCurrType = function(){
     var findClass = angular.element('#social0 .social-inner').attr('class');
-    var isImg = findClass.indexOf('montage');
+    var isMontage = findClass.indexOf('montage');
     var isVid = findClass.indexOf('video');
-    if (isImg !== -1){
-      return 'image';
+    if (isMontage !== -1){
+      return 'montage';
     } else if (isVid !== -1){
       return 'video';
     } else {
